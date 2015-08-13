@@ -42,7 +42,7 @@ int main()
     if(TESTE){    
         for(i = 0; i < max; i++)
             printf("%d ", primos[i]);
-        printf("\n");
+        printf("\n 4 é primo? %d \n",eprimo(&primos[0], achados, candidato));
     }
     return 0;
 }
@@ -50,7 +50,7 @@ int main()
 int eprimo(int primos[], int achados, int candidato){
     int i;
     
-    for(i = 1; i < achados; i++){
+    for(i = 0; i < achados; i++){
         if(candidato%primos[i] == 0)
             return 0;
     }
