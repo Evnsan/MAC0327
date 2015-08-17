@@ -1,0 +1,121 @@
+#include<stdio.h>
+
+#define MAX 1000
+#define TESTE 1
+
+int main(){
+    int n;
+    char entrada;
+    int numero[MAX];
+    /*parte 1*/
+    int nclusters, clusters[MAX][2];
+    int tamclusteratual, tamclustermax;
+    int inicio;
+    /*parte 2*/
+    int vetor1[MAX], vetor2[MAX];
+    int candidatosvelho, candidatosnovo;
+    int rotcand, rotmelhor;
+    int melhor;
+    int digposcand, digposmelhor;
+    int **tmp, **clustersvelho, **clustersnovo;
+
+    /*controle*/
+    int i, j;
+
+    /*Inicializacao*/
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++){
+        while(scanf("%c", &entrada) && entrada == '\n');
+        numero[i] = (int)(entrada - '0');
+    }
+    /***/
+    if(TESTE){
+        for (i = 0; i < n; i++)
+            printf("%d ", numero[i]);
+        printf("\n");
+    }
+    /***/
+    
+    /*Processamento*/
+    /*achando clusters*/
+    tamclustermax = 1;
+    nclusters = 0;
+    for(i = 0; i < n; i++){
+        tamclusteratual = 1;
+        inicio = i;
+        i++;
+        while(numero[inicio] == numero[i] && i != inicio){
+            tamclusteratual++;
+            i = (i + 1)%n;
+        }
+        if(tamclusteratual >= tamclustermax){
+            if(tamclusteratual > tamclustermax)
+                nclusters = 0;
+            clusters[nclusters][0] = inicio;
+            clusters[nclusters][1] = (i ? i - 1: n - 1);
+            nclusters++;
+        }
+        i = inicio + tamclusteratual;
+    }
+
+    /***/
+    if(TESTE){
+        printf("nclusters = %d:\n", nclusters);
+        for (i = 0; i < nclusters; i++)
+            printf("%d %d\n", clusters[i][0], clusters[i][1]);
+    }
+    /***/
+
+    /*achando melhor cluster*/
+    candidatosvelho = nclusters;
+    candidatosnovo = 1;
+    melhor = 0;
+    clustersvelho = (int**)&vetor1;
+    clustersnovo = (int**)&vetor2;
+
+    for(i = 0; i < candidatosvelho; i++)
+        vetor1[i] = i;
+
+    while(i < n && candidatosvelho != 1){
+        for(j = 1; j < candidatosvelho; j++){
+            /*preparando melhor*/
+            rotmelhor = (10 - numero[ clusters[*clustersvelho[melhor]][0] ])%10;
+            digposmelhor = (numero[ (clusters[*clustersvelho[melhor]][0] + i)%n 
+                            + rotmelhor])%10;
+            /*preparando candiato*/
+            rotcand = (10 - numero[ clusters[*clustersvelho[j]][0] ])%10;
+            digposcand = (numero[ (clusters[*clustersvelho[j]][0] + i)%n ]
+                            + rotcand)%10;
+
+            if(TESTE){
+                printf("melhor = %d e candidato = %d\n", melhor, j);
+                printf("deslocamento = %d\n", i);
+                printf("teste = %d x %d\n\n", digposcand , digposmelhor);
+            }
+            if(digposcand < digposmelhor){
+                *clustersnovo[0] = *clustersvelho[j];
+                candidatosnovo = 1;
+                melhor = j;
+            }
+            else if(digposcand == digposmelhor){
+                *clustersnovo[candidatosnovo] = j;
+                candidatosnovo++;
+            }
+        }
+        tmp = clustersvelho;
+        clustersvelho = clustersnovo;
+        clustersnovo = tmp;
+
+        candidatosvelho = candidatosnovo;
+
+        i++;
+    }
+
+
+    
+
+    return 0;
+}
+
+
