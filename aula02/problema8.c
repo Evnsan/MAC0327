@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+
+/*resubmetendo*/
 int main()
 {
     int n, i;

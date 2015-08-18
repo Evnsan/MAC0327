@@ -50,10 +50,8 @@ int main(){
             i = (i + 1)%n;
         }
         if(tamclusteratual >= tamclustermax){
-            if(tamclusteratual > tamclustermax){
-                tamclustermax = tamclusteratual;
+            if(tamclusteratual > tamclustermax)
                 nclusters = 0;
-            }
             clusters[nclusters][0] = inicio;
             clusters[nclusters][1] = (i ? i - 1: n - 1);
             nclusters++;
@@ -64,7 +62,6 @@ int main(){
     /***/
     if(TESTE){
         printf("nclusters = %d:\n", nclusters);
-        printf("tamanho dos clusters = %d:\n", tamclustermax);
         for (i = 0; i < nclusters; i++)
             printf("%d %d\n", clusters[i][0], clusters[i][1]);
     }
@@ -101,22 +98,18 @@ int main(){
                             + rotcand)%10;
             /***/
             if(TESTE){
-                printf("----------------------------------------\n");
-                printf("deslocamento = %d\n\n", i);
 
-                printf("melhor:\n");
-                printf("pos=%d\n", clustersvelho[melhor]);
-                printf("digpos= %d\n", digposmelhor);
-                printf("numero = %d\n", numero[ (clusters[clustersvelho[melhor]][0] + i  )%n]);
-                printf("rot = %d\n\n", rotmelhor);
+                printf("posmelhor = %d e poscand = %d\n", clustersvelho[melhor],
+                        clustersvelho[j]);
 
-                printf("candidato:\n");
-                printf("pos=%d\n", clustersvelho[j]);
-                printf("digpos= %d\n", digposcand);
-                printf("numero = %d\n", numero[ (clusters[clustersvelho[j]][0] + i  )%n]);
-                printf("rot = %d\n", rotcand);
-
-                printf("\nteste = %d x %d\n\n", digposcand , digposmelhor);
+                printf("digposmelhor = %d e numero = %d\n", digposmelhor,
+                        numero[ (clusters[clustersvelho[melhor]][0] + i  )%n]);
+                printf("digposcand = %d e numero = %d\n", digposcand,
+                        numero[ (clusters[clustersvelho[j]][0] + i  )%n]);
+                printf("rotmelhor = %d e rotcand = %d\n", rotmelhor, rotcand);
+                printf("melhor = %d e candidato = %d\n", melhor, j);
+                printf("deslocamento = %d\n", i);
+                printf("teste = %d x %d\n\n", digposcand , digposmelhor);
             }
             /***/
             if(digposcand < digposmelhor){
@@ -149,7 +142,7 @@ int main(){
     rotmelhor = (10 - numero[ clusters[clustersvelho[0]][0] ])%10;
     /***/
     if(TESTE){
-        printf("\nEscolhidos: cluster de %d, com rot %d na posicao %d \n\n",
+        printf(" escolhidos: cluster de %d, com rot %d na posicao %d \n",
                 numero[j], rotmelhor, j);
     }
     /***/
