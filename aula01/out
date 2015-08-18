@@ -1,0 +1,2488 @@
+4 1 0 1 2 5 1 6 4 5 4 1 0 1 2 5 1 6 4 5 4 1 0 1 2 5 1 6 4 5 4 1 0 1 2 5 1 6 4 5 4 1 0 1 2 5 1 6 4 5 
+nclusters = 50:
+0 0
+1 1
+2 2
+3 3
+4 4
+5 5
+6 6
+7 7
+8 8
+9 9
+10 10
+11 11
+12 12
+13 13
+14 14
+15 15
+16 16
+17 17
+18 18
+19 19
+20 20
+21 21
+22 22
+23 23
+24 24
+25 25
+26 26
+27 27
+28 28
+29 29
+30 30
+31 31
+32 32
+33 33
+34 34
+35 35
+36 36
+37 37
+38 38
+39 39
+40 40
+41 41
+42 42
+43 43
+44 44
+45 45
+46 46
+47 47
+48 48
+49 49
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 
+posmelhor = 0 e poscand = 1
+digposmelhor = 7 e numero = 1
+digposcand = 9 e numero = 0
+rotmelhor = 6 e rotcand = 9
+melhor = 0 e candidato = 1
+deslocamento = 1
+teste = 9 x 7
+
+posmelhor = 0 e poscand = 2
+digposmelhor = 7 e numero = 1
+digposcand = 1 e numero = 1
+rotmelhor = 6 e rotcand = 0
+melhor = 0 e candidato = 2
+deslocamento = 1
+teste = 1 x 7
+
+posmelhor = 2 e poscand = 3
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 2
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 3
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 4
+digposmelhor = 1 e numero = 1
+digposcand = 3 e numero = 5
+rotmelhor = 0 e rotcand = 8
+melhor = 2 e candidato = 4
+deslocamento = 1
+teste = 3 x 1
+
+posmelhor = 2 e poscand = 5
+digposmelhor = 1 e numero = 1
+digposcand = 6 e numero = 1
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 5
+deslocamento = 1
+teste = 6 x 1
+
+posmelhor = 2 e poscand = 6
+digposmelhor = 1 e numero = 1
+digposcand = 5 e numero = 6
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 6
+deslocamento = 1
+teste = 5 x 1
+
+posmelhor = 2 e poscand = 7
+digposmelhor = 1 e numero = 1
+digposcand = 8 e numero = 4
+rotmelhor = 0 e rotcand = 4
+melhor = 2 e candidato = 7
+deslocamento = 1
+teste = 8 x 1
+
+posmelhor = 2 e poscand = 8
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 5
+rotmelhor = 0 e rotcand = 6
+melhor = 2 e candidato = 8
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 9
+digposmelhor = 1 e numero = 1
+digposcand = 9 e numero = 4
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 9
+deslocamento = 1
+teste = 9 x 1
+
+posmelhor = 2 e poscand = 10
+digposmelhor = 1 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 0 e rotcand = 6
+melhor = 2 e candidato = 10
+deslocamento = 1
+teste = 7 x 1
+
+posmelhor = 2 e poscand = 11
+digposmelhor = 1 e numero = 1
+digposcand = 9 e numero = 0
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 11
+deslocamento = 1
+teste = 9 x 1
+
+posmelhor = 2 e poscand = 12
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 1
+rotmelhor = 0 e rotcand = 0
+melhor = 2 e candidato = 12
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 13
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 2
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 13
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 14
+digposmelhor = 1 e numero = 1
+digposcand = 3 e numero = 5
+rotmelhor = 0 e rotcand = 8
+melhor = 2 e candidato = 14
+deslocamento = 1
+teste = 3 x 1
+
+posmelhor = 2 e poscand = 15
+digposmelhor = 1 e numero = 1
+digposcand = 6 e numero = 1
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 15
+deslocamento = 1
+teste = 6 x 1
+
+posmelhor = 2 e poscand = 16
+digposmelhor = 1 e numero = 1
+digposcand = 5 e numero = 6
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 16
+deslocamento = 1
+teste = 5 x 1
+
+posmelhor = 2 e poscand = 17
+digposmelhor = 1 e numero = 1
+digposcand = 8 e numero = 4
+rotmelhor = 0 e rotcand = 4
+melhor = 2 e candidato = 17
+deslocamento = 1
+teste = 8 x 1
+
+posmelhor = 2 e poscand = 18
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 5
+rotmelhor = 0 e rotcand = 6
+melhor = 2 e candidato = 18
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 19
+digposmelhor = 1 e numero = 1
+digposcand = 9 e numero = 4
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 19
+deslocamento = 1
+teste = 9 x 1
+
+posmelhor = 2 e poscand = 20
+digposmelhor = 1 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 0 e rotcand = 6
+melhor = 2 e candidato = 20
+deslocamento = 1
+teste = 7 x 1
+
+posmelhor = 2 e poscand = 21
+digposmelhor = 1 e numero = 1
+digposcand = 9 e numero = 0
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 21
+deslocamento = 1
+teste = 9 x 1
+
+posmelhor = 2 e poscand = 22
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 1
+rotmelhor = 0 e rotcand = 0
+melhor = 2 e candidato = 22
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 23
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 2
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 23
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 24
+digposmelhor = 1 e numero = 1
+digposcand = 3 e numero = 5
+rotmelhor = 0 e rotcand = 8
+melhor = 2 e candidato = 24
+deslocamento = 1
+teste = 3 x 1
+
+posmelhor = 2 e poscand = 25
+digposmelhor = 1 e numero = 1
+digposcand = 6 e numero = 1
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 25
+deslocamento = 1
+teste = 6 x 1
+
+posmelhor = 2 e poscand = 26
+digposmelhor = 1 e numero = 1
+digposcand = 5 e numero = 6
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 26
+deslocamento = 1
+teste = 5 x 1
+
+posmelhor = 2 e poscand = 27
+digposmelhor = 1 e numero = 1
+digposcand = 8 e numero = 4
+rotmelhor = 0 e rotcand = 4
+melhor = 2 e candidato = 27
+deslocamento = 1
+teste = 8 x 1
+
+posmelhor = 2 e poscand = 28
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 5
+rotmelhor = 0 e rotcand = 6
+melhor = 2 e candidato = 28
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 29
+digposmelhor = 1 e numero = 1
+digposcand = 9 e numero = 4
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 29
+deslocamento = 1
+teste = 9 x 1
+
+posmelhor = 2 e poscand = 30
+digposmelhor = 1 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 0 e rotcand = 6
+melhor = 2 e candidato = 30
+deslocamento = 1
+teste = 7 x 1
+
+posmelhor = 2 e poscand = 31
+digposmelhor = 1 e numero = 1
+digposcand = 9 e numero = 0
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 31
+deslocamento = 1
+teste = 9 x 1
+
+posmelhor = 2 e poscand = 32
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 1
+rotmelhor = 0 e rotcand = 0
+melhor = 2 e candidato = 32
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 33
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 2
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 33
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 34
+digposmelhor = 1 e numero = 1
+digposcand = 3 e numero = 5
+rotmelhor = 0 e rotcand = 8
+melhor = 2 e candidato = 34
+deslocamento = 1
+teste = 3 x 1
+
+posmelhor = 2 e poscand = 35
+digposmelhor = 1 e numero = 1
+digposcand = 6 e numero = 1
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 35
+deslocamento = 1
+teste = 6 x 1
+
+posmelhor = 2 e poscand = 36
+digposmelhor = 1 e numero = 1
+digposcand = 5 e numero = 6
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 36
+deslocamento = 1
+teste = 5 x 1
+
+posmelhor = 2 e poscand = 37
+digposmelhor = 1 e numero = 1
+digposcand = 8 e numero = 4
+rotmelhor = 0 e rotcand = 4
+melhor = 2 e candidato = 37
+deslocamento = 1
+teste = 8 x 1
+
+posmelhor = 2 e poscand = 38
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 5
+rotmelhor = 0 e rotcand = 6
+melhor = 2 e candidato = 38
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 39
+digposmelhor = 1 e numero = 1
+digposcand = 9 e numero = 4
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 39
+deslocamento = 1
+teste = 9 x 1
+
+posmelhor = 2 e poscand = 40
+digposmelhor = 1 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 0 e rotcand = 6
+melhor = 2 e candidato = 40
+deslocamento = 1
+teste = 7 x 1
+
+posmelhor = 2 e poscand = 41
+digposmelhor = 1 e numero = 1
+digposcand = 9 e numero = 0
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 41
+deslocamento = 1
+teste = 9 x 1
+
+posmelhor = 2 e poscand = 42
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 1
+rotmelhor = 0 e rotcand = 0
+melhor = 2 e candidato = 42
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 43
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 2
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 43
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 44
+digposmelhor = 1 e numero = 1
+digposcand = 3 e numero = 5
+rotmelhor = 0 e rotcand = 8
+melhor = 2 e candidato = 44
+deslocamento = 1
+teste = 3 x 1
+
+posmelhor = 2 e poscand = 45
+digposmelhor = 1 e numero = 1
+digposcand = 6 e numero = 1
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 45
+deslocamento = 1
+teste = 6 x 1
+
+posmelhor = 2 e poscand = 46
+digposmelhor = 1 e numero = 1
+digposcand = 5 e numero = 6
+rotmelhor = 0 e rotcand = 9
+melhor = 2 e candidato = 46
+deslocamento = 1
+teste = 5 x 1
+
+posmelhor = 2 e poscand = 47
+digposmelhor = 1 e numero = 1
+digposcand = 8 e numero = 4
+rotmelhor = 0 e rotcand = 4
+melhor = 2 e candidato = 47
+deslocamento = 1
+teste = 8 x 1
+
+posmelhor = 2 e poscand = 48
+digposmelhor = 1 e numero = 1
+digposcand = 1 e numero = 5
+rotmelhor = 0 e rotcand = 6
+melhor = 2 e candidato = 48
+deslocamento = 1
+teste = 1 x 1
+
+posmelhor = 2 e poscand = 49
+digposmelhor = 1 e numero = 1
+digposcand = 9 e numero = 4
+rotmelhor = 0 e rotcand = 5
+melhor = 2 e candidato = 49
+deslocamento = 1
+teste = 9 x 1
+
+candidatosnovo = 15 
+posmelhor = 8 e poscand = 3
+digposmelhor = 0 e numero = 4
+digposcand = 4 e numero = 5
+rotmelhor = 6 e rotcand = 9
+melhor = 2 e candidato = 1
+deslocamento = 2
+teste = 4 x 0
+
+posmelhor = 8 e poscand = 8
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 2
+teste = 0 x 0
+
+posmelhor = 8 e poscand = 12
+digposmelhor = 0 e numero = 4
+digposcand = 2 e numero = 2
+rotmelhor = 6 e rotcand = 0
+melhor = 2 e candidato = 3
+deslocamento = 2
+teste = 2 x 0
+
+posmelhor = 8 e poscand = 13
+digposmelhor = 0 e numero = 4
+digposcand = 4 e numero = 5
+rotmelhor = 6 e rotcand = 9
+melhor = 2 e candidato = 4
+deslocamento = 2
+teste = 4 x 0
+
+posmelhor = 8 e poscand = 18
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 2
+teste = 0 x 0
+
+posmelhor = 8 e poscand = 22
+digposmelhor = 0 e numero = 4
+digposcand = 2 e numero = 2
+rotmelhor = 6 e rotcand = 0
+melhor = 2 e candidato = 6
+deslocamento = 2
+teste = 2 x 0
+
+posmelhor = 8 e poscand = 23
+digposmelhor = 0 e numero = 4
+digposcand = 4 e numero = 5
+rotmelhor = 6 e rotcand = 9
+melhor = 2 e candidato = 7
+deslocamento = 2
+teste = 4 x 0
+
+posmelhor = 8 e poscand = 28
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 8
+deslocamento = 2
+teste = 0 x 0
+
+posmelhor = 8 e poscand = 32
+digposmelhor = 0 e numero = 4
+digposcand = 2 e numero = 2
+rotmelhor = 6 e rotcand = 0
+melhor = 2 e candidato = 9
+deslocamento = 2
+teste = 2 x 0
+
+posmelhor = 8 e poscand = 33
+digposmelhor = 0 e numero = 4
+digposcand = 4 e numero = 5
+rotmelhor = 6 e rotcand = 9
+melhor = 2 e candidato = 10
+deslocamento = 2
+teste = 4 x 0
+
+posmelhor = 8 e poscand = 38
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 11
+deslocamento = 2
+teste = 0 x 0
+
+posmelhor = 8 e poscand = 42
+digposmelhor = 0 e numero = 4
+digposcand = 2 e numero = 2
+rotmelhor = 6 e rotcand = 0
+melhor = 2 e candidato = 12
+deslocamento = 2
+teste = 2 x 0
+
+posmelhor = 8 e poscand = 43
+digposmelhor = 0 e numero = 4
+digposcand = 4 e numero = 5
+rotmelhor = 6 e rotcand = 9
+melhor = 2 e candidato = 13
+deslocamento = 2
+teste = 4 x 0
+
+posmelhor = 8 e poscand = 48
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 14
+deslocamento = 2
+teste = 0 x 0
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 3
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 3
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 3
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 3
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 3
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 4
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 4
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 4
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 4
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 4
+teste = 6 x 6
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 5
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 5
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 5
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 5
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 5
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 6
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 6
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 6
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 6
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 6
+teste = 8 x 8
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 7
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 7
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 7
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 7
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 7
+teste = 1 x 1
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 8
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 8
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 8
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 8
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 8
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 9
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 9
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 9
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 9
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 9
+teste = 2 x 2
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 10
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 10
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 10
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 10
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 10
+teste = 0 x 0
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 11
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 11
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 11
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 11
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 11
+teste = 1 x 1
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 12
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 12
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 12
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 12
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 12
+teste = 0 x 0
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 13
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 13
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 13
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 13
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 13
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 14
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 14
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 14
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 14
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 14
+teste = 6 x 6
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 15
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 15
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 15
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 15
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 15
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 16
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 16
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 16
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 16
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 16
+teste = 8 x 8
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 17
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 17
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 17
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 17
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 17
+teste = 1 x 1
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 18
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 18
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 18
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 18
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 18
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 19
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 19
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 19
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 19
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 19
+teste = 2 x 2
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 20
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 20
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 20
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 20
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 20
+teste = 0 x 0
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 21
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 21
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 21
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 21
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 21
+teste = 1 x 1
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 22
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 22
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 22
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 22
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 22
+teste = 0 x 0
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 23
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 23
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 23
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 23
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 23
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 24
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 24
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 24
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 24
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 24
+teste = 6 x 6
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 25
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 25
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 25
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 25
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 25
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 26
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 26
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 26
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 26
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 26
+teste = 8 x 8
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 27
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 27
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 27
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 27
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 27
+teste = 1 x 1
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 28
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 28
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 28
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 28
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 28
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 29
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 29
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 29
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 29
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 29
+teste = 2 x 2
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 30
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 30
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 30
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 30
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 30
+teste = 0 x 0
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 31
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 31
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 31
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 31
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 31
+teste = 1 x 1
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 32
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 32
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 32
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 32
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 32
+teste = 0 x 0
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 33
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 33
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 33
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 33
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 33
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 34
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 34
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 34
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 34
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 34
+teste = 6 x 6
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 35
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 35
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 35
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 35
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 35
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 36
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 36
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 36
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 36
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 36
+teste = 8 x 8
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 37
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 37
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 37
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 37
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 37
+teste = 1 x 1
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 38
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 38
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 38
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 38
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 38
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 39
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 39
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 39
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 39
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 39
+teste = 2 x 2
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 40
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 40
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 40
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 40
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 40
+teste = 0 x 0
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 41
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 41
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 41
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 41
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 41
+teste = 1 x 1
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 42
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 42
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 42
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 42
+teste = 0 x 0
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 0 e numero = 4
+digposcand = 0 e numero = 4
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 42
+teste = 0 x 0
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 43
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 43
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 43
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 43
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 43
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 44
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 44
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 44
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 44
+teste = 6 x 6
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 6 e numero = 0
+digposcand = 6 e numero = 0
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 44
+teste = 6 x 6
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 45
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 45
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 45
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 45
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 45
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 46
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 46
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 46
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 46
+teste = 8 x 8
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 8 e numero = 2
+digposcand = 8 e numero = 2
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 46
+teste = 8 x 8
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 47
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 47
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 47
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 47
+teste = 1 x 1
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 1 e numero = 5
+digposcand = 1 e numero = 5
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 47
+teste = 1 x 1
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 48
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 48
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 48
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 48
+teste = 7 x 7
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 7 e numero = 1
+digposcand = 7 e numero = 1
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 48
+teste = 7 x 7
+
+candidatosnovo = 6 
+posmelhor = 18 e poscand = 8
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 1
+deslocamento = 49
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 18
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 2
+deslocamento = 49
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 28
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 3
+deslocamento = 49
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 38
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 4
+deslocamento = 49
+teste = 2 x 2
+
+posmelhor = 18 e poscand = 48
+digposmelhor = 2 e numero = 6
+digposcand = 2 e numero = 6
+rotmelhor = 6 e rotcand = 6
+melhor = 2 e candidato = 5
+deslocamento = 49
+teste = 2 x 2
+
+candidatosnovo = 6 
+ escolhidos: cluster de 0, com rot 0 na posicao 2 
+01251645410125164541012516454101251645410125164541
