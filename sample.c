@@ -8,17 +8,13 @@
 
 #include<stdio.h>
 
-#define MAX 100000
-
 int main(){
-    long int n;
-    char entrada[MAX];
+    int n;
 
     /*controle*/
-    long int i;
+    int i;
 
     /*Entrada*/
-    scanf("%ld", &n);
 
     /*Processamento*/
 

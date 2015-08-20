@@ -72,30 +72,6 @@ Node crianode(Item z){
     return x;
 }
 
-/*insere*/
-int insere(Node z){
-    Node y = NULL;
-    Node x = tree;
-    while(x != NULL){
-        y = x;
-        if(getkey(z->data) < getkey(x->data))
-            x = x->left;
-        else
-            x = x->right;
-    }
-    z->p = y;
-    if(y == NULL)
-        tree = z;
-    else if(getkey(z->data) < getkey(y->data))
-        y->left = z;
-    else
-        y->right = z;
-    return 0;
-}
-
-/*remove*/
-
-
 /*mim*/
 Node minimo(Node x){
     while(x != NULL)
@@ -137,7 +113,7 @@ Node predecessor(Node x){
     }
     return y;
 }
-
+1
 /*busca*/
 Node busca(Node x, key k){
     while(x == NULL || getkey(x) == k){
@@ -149,7 +125,55 @@ Node busca(Node x, key k){
     return x;
 }
 
-
+/*remove*/
+/*supoe tree->p = NULL*/
+Node remove(Node tree, Node z){
+    Node x, y;
+    /***definindo y para splice out***/
+    if(z->left == NULL || z->right == NULL)
+        y = z;
+    else
+        y = sucessor(z);
+    /***definindo x = filho para remanejar ou x = NULL***/
+    if(y->left != NULL)
+        x = y->left;
+    else
+        x = y->right;
+    /***splice out de y***/
+    if(x != NULL)
+        x->p = y->p;
+    if(y->p == NULL)
+        tree = x;
+    else if(y == y->p->left)
+        y->p->left = x;
+    else
+        y->p->right = x;
+    /***copiando z em y***/
+    if( y != z)
+        z->data = y->data;
+    return y;
+}
+        
+/*insere*/
+int insere(Node z){
+    Node y = NULL;
+    Node x = tree;
+    while(x != NULL){
+        y = x;
+        if(getkey(z->data) < getkey(x->data))
+            x = x->left;
+        else
+            x = x->right;
+    }
+    z->p = y;
+    if(y == NULL)
+        tree = z;
+    else if(getkey(z->data) < getkey(y->data))
+        y->left = z;
+    else
+        y->right = z;
+    return 0;
+}
 
 /**********************************/
 /*programa principal*/
