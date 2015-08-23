@@ -15,12 +15,16 @@
 #define JOG1 0
 #define JOG2 1
 
+int buscabin(int *vetor, long int esq, long int dir, int key);
+
+
 int main(){
     long int n;
     int entrada[MAX], saida[2][MAX], acumulado[2][MAX];
     char c;
-    int vencedor, pontosMax, setsJogador1, setsJogador2, fimSetAnterior;
-    int indice[2];
+    int vencedor, pontosMax, setsJogador1, setsJogador2, procura;
+    long int fimSetAnterior;
+    long int indice[2];
 
     /*controle*/
     long int i;
@@ -87,11 +91,12 @@ int main(){
         setsJogador2 = 0;
         fimSetAnterior = 0;
         procura = acumulado[JOG1][fimSetAnterior] + i;
-        indice[JOG1] = achaprox(acumulado, JOG1, procura);
+        indice[JOG1] = buscabin(acumulado[JOG1],fimSetAnterior, n, procura);
         procura = acumulado[JOG2][fimSetAnterior] + i;
-        indice[JOG2] = achaprox(acumulado, JOG2, procura);
+        indice[JOG2] = buscabin(acumulado[JOG2],fimSetAnterior, n, procura);
         /*verificar se com t = i, o jogo termina com o set final para o vencedor e o vencedor termina com mais sets.*/
         /**sim* - adiciona [sets do vencedor] [i] no vetor saida*/
+        /*buscabin(*vetor, esq, dir, key);*/
 
 
 
@@ -102,4 +107,13 @@ int main(){
     /*retorna jogos validos em ordem crescente [sets] [points]*/
 
     return 0;
+}
+
+int buscabin(int *vetor, long int esq, long int dir, int key){
+    long int meio = dir - esq;
+
+    if(vetor[meio] == key)
+        return meio;
+    
+    return MAX;
 }
