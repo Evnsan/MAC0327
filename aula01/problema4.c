@@ -173,24 +173,24 @@ long int buscabin(int *vetor, long int esq, long int dir, long int key){
 
 int insereSaida(long int *matriz, long int posicao, long int sets, long int pontos){
     if(posicao != 0){ 
-        while(*((matriz+(posicao - 1)*MAX)+0) > sets){
-            *((matriz+(posicao)*MAX)+0) = *((matriz+(posicao - 1)*MAX)+0);
+        while(*((matriz+(posicao - 1)*2)+0) > sets){
+            *((matriz+(posicao)*2)+0) = *((matriz+(posicao - 1)*2)+0);
             /*matriz[posicao][0] = matriz[posicao - 1][0];*/
-            *((matriz+(posicao)*MAX)+1) = *((matriz+(posicao - 1)*MAX)+1);
+            *((matriz+(posicao)*2)+1) = *((matriz+(posicao - 1)*2)+1);
             /*matriz[posicao][1] = matriz[posicao - 1][1];*/
             posicao--;
         }
-        while(*((matriz+(posicao - 1)*MAX)+0) == sets && *((matriz+(posicao - 1)*MAX)+1) > pontos){
-            *((matriz+(posicao)*MAX)+0) = *((matriz+(posicao - 1)*MAX)+0);
+        while(*((matriz+(posicao - 1)*2)+0) == sets && *((matriz+(posicao - 1)*2)+1) > pontos){
+            *((matriz+(posicao)*2)+0) = *((matriz+(posicao - 1)*2)+0);
             /*matriz[posicao][0] = matriz[posicao - 1][0];*/
-            *((matriz+(posicao)*MAX)+1) = *((matriz+(posicao - 1)*MAX)+1);
+            *((matriz+(posicao)*2)+1) = *((matriz+(posicao - 1)*2)+1);
             /*matriz[posicao][1] = matriz[posicao - 1][1];*/
             posicao--;
         }
     }
-    *((matriz+(posicao)*MAX)+0) = sets;
+    *((matriz+(posicao)*2)+0) = sets;
     /*matriz[posicao][0] = matriz[posicao - 1][0];*/
-    *((matriz+(posicao)*MAX)+1) = pontos;
+    *((matriz+(posicao)*2)+1) = pontos;
     /*matriz[posicao][1] = matriz[posicao - 1][1];*/
     return 0;
 }
