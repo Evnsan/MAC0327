@@ -11,11 +11,12 @@
 #include<stdio.h>
 
 #define MAX 100001
-#define TESTE 1
+#define TESTE 0
 #define JOG1 0
 #define JOG2 1
 
 long int buscabin(int *vetor, long int esq, long int dir, long int key);
+int insereSaida(long int *matriz, long int posicao, long int sets, long int pontos);
 
 
 int main(){
@@ -52,7 +53,7 @@ int main(){
 
 
     for(i = 1; i < n; i++){
-        while(scanf("%c", &c) && c == '\n');
+        while(scanf("%c", &c) && (c == '\n' || c == ' '));
         entrada[i] = c - '0';
         if(entrada[i] == 1){
             acumulado[JOG1][i] = acumulado[JOG1][i-1] + 1;
@@ -100,9 +101,14 @@ int main(){
         fimSetAnterior = 0;
         while(fimSetAnterior < n - 1){
             procura = acumulado[JOG1][fimSetAnterior] + i;
-            indice[JOG1] = buscabin(acumulado[JOG1],fimSetAnterior, n-1, procura);
+            indice[JOG1] = buscabin(acumulado[JOG1],fimSetAnterior + 1, n-1, procura);
             procura = acumulado[JOG2][fimSetAnterior] + i;
-            indice[JOG2] = buscabin(acumulado[JOG2],fimSetAnterior, n-1, procura);
+            indice[JOG2] = buscabin(acumulado[JOG2],fimSetAnterior + 1, n-1, procura);
+            /***/
+            if(TESTE){
+                printf("indices devolvidos: JOG1:%ld, JOG2:%ld\n", indice[JOG1], indice[JOG2]);
+            }
+            /***/
             if(indice[JOG1] < indice[JOG2]){
                 fimSetAnterior = indice[JOG1];
                 setsJogador1++;
@@ -114,13 +120,11 @@ int main(){
         }
         if(fimSetAnterior < MAX){
             if(setsJogador1 > setsJogador2 && vencedor == JOG1){
-                saida[npossibilidades][0] = setsJogador1;
-                saida[npossibilidades][1] = i;
+                insereSaida((long int *)saida,npossibilidades,setsJogador1,i);
                 npossibilidades++;
             }
             else if(setsJogador1 < setsJogador2 && vencedor == JOG2){
-                saida[npossibilidades][0] = setsJogador2;
-                saida[npossibilidades][1] = i;
+                insereSaida((long int*)saida,npossibilidades,setsJogador2,i);
                 npossibilidades++;
             }
         }
@@ -139,6 +143,7 @@ int main(){
 
 long int buscabin(int *vetor, long int esq, long int dir, long int key){
     
+    /***/
     if(TESTE){
         long int i;
         printf("Dentro do buscabin:\n");
@@ -149,16 +154,43 @@ long int buscabin(int *vetor, long int esq, long int dir, long int key){
         printf("\n");
         /*return MAX;<=====================*/
     }
+    /***/
     if(dir < esq)
         return MAX;
     else{
-        long int meio = (dir - esq)/2;
+        long int meio = (dir - esq)/2 + esq;
         
         if(vetor[meio] > key)
             return buscabin(vetor, esq, meio - 1, key);
         else if(vetor[meio] < key)
             return buscabin(vetor, meio + 1, dir, key);
+        else if( vetor[meio - 1] == key)
+            return buscabin(vetor, esq, meio - 1, key);
         else
             return meio;
     }
+}
+
+int insereSaida(long int *matriz, long int posicao, long int sets, long int pontos){
+    if(posicao != 0){ 
+        while(*((matriz+(posicao - 1)*MAX)+0) > sets){
+            *((matriz+(posicao)*MAX)+0) = *((matriz+(posicao - 1)*MAX)+0);
+            /*matriz[posicao][0] = matriz[posicao - 1][0];*/
+            *((matriz+(posicao)*MAX)+1) = *((matriz+(posicao - 1)*MAX)+1);
+            /*matriz[posicao][1] = matriz[posicao - 1][1];*/
+            posicao--;
+        }
+        while(*((matriz+(posicao - 1)*MAX)+0) == sets && *((matriz+(posicao - 1)*MAX)+1) > pontos){
+            *((matriz+(posicao)*MAX)+0) = *((matriz+(posicao - 1)*MAX)+0);
+            /*matriz[posicao][0] = matriz[posicao - 1][0];*/
+            *((matriz+(posicao)*MAX)+1) = *((matriz+(posicao - 1)*MAX)+1);
+            /*matriz[posicao][1] = matriz[posicao - 1][1];*/
+            posicao--;
+        }
+    }
+    *((matriz+(posicao)*MAX)+0) = sets;
+    /*matriz[posicao][0] = matriz[posicao - 1][0];*/
+    *((matriz+(posicao)*MAX)+1) = pontos;
+    /*matriz[posicao][1] = matriz[posicao - 1][1];*/
+    return 0;
 }
