@@ -3,24 +3,6 @@
 /***********************************/
 /***Evandro Augusto Nunes Sanches***/
 /***********************************/
-<<<<<<< HEAD
-/***********Problema 04*************/
-/***********************************/
-
-#include<stdio.h>
-
-int main(){
-    int n;
-
-    /*controle*/
-    int i;
-
-    /*Entrada*/
-
-    /*Processamento*/
-
-    /*Saida*/
-=======
 /***********Problema 22*************/
 /***********************************/
 
@@ -31,9 +13,6 @@ int main(){
 /***********************************************/
 #include<stdlib.h>
 #include<stdio.h>
-
-#define TESTE 0
-
 
 /*dados satelites*/
 typedef long int key;
@@ -75,8 +54,8 @@ key getKey(Item z){
 /*funcoes auxiliares*/
 
 /*inicializa*/
-int inicializa(long int n){
-    long int i;
+int inicializa(int n){
+    int i;
     Node tmp = NULL;
     pool = NULL;
     for(i = 0; i < n; i++){
@@ -166,34 +145,19 @@ Node busca(Node x, key k){
 
 /*remove*/
 /*supoe tree->p = NULL*/
-Node removeNode(Node z){
+Node removeNode(Node tree, Node z){
     Node x, y;
     /***definindo y para splice out***/
     if(z->left == NULL || z->right == NULL)
         y = z;
     else
         y = sucessor(z);
-    
-    /***/
-    if(TESTE){
-        printf("y %p (%ld)\n", y, getKey(y->data));
-    }
-    /***/
-
     /***definindo x = filho para remanejar ou x = NULL***/
     if(y->left != NULL)
         x = y->left;
     else
         x = y->right;
-    
-    /***/
-    if(TESTE){
-        printf("x %p (%ld)\n", x, getKey(x->data));
-    }
-    /***/
-    
     /***splice out de y***/
-    
     if(x != NULL)
         x->p = y->p;
     if(y->p == NULL)
@@ -202,34 +166,12 @@ Node removeNode(Node z){
         y->p->left = x;
     else
         y->p->right = x;
-    
-    /***/
-    if(TESTE){
-        printf("tree %p (%ld)\n", tree, getKey(tree->data));
-    }
-    /***/
-
     /***copiando z em y***/
     if( y != z)
         z->data = y->data;
     return y;
 }
-
-/*destroiNode*/
-int destroiNode(Node x){
-    if(x == NULL){
-        printf("ERRO: destroiNode recebeu NULL");
-        return 1;
-    }
-    if(pool == NULL)
-        pool = x;
-    x->p = pool;
-    x->right = NULL;
-    x->left = NULL;
-    pool = x;
-    return 0;
-}
-
+        
 /*insere*/
 int insereNode(Node z){
     Node y = NULL;
@@ -266,77 +208,53 @@ Node getRoot(){
 /**********************************/
 /*programa principal*/
 int main(){
-    
     Node p;
     Item num;
     long int n;
-    long int entrada;
-    float x, y;
+    long int armazenados;
 
-    /*controle*/
-    long int i;
-
-    /*entrada*/
-    scanf("%ld", &n);
+    n = 5;
     
-    inicializa(n / 2 + 2);
-
-    for(i = 0; i < n; i++){
-        scanf("%ld", &entrada);
-        num = criaItem(entrada);
-        p = criaNode(num);
-        insereNode(p);
-        if(i > n/2 ){
-            p = maximo(getRoot());
-            /***/
-            if(TESTE){
-                printf("maximo %p (%ld)\n", p, getKey(getItem(p)));
-            }
-            /***/
-            p = removeNode(p);
-            /***/
-            if(TESTE){
-                printf("removido %p (%ld)\n", p, getKey(getItem(p)));
-            }
-            /***/
-            destroiNode(p);
-            /***/
-            if(TESTE){
-                printf("root = %p (%ld)\n", getRoot(),
-                        getKey(getItem(getRoot())));
-            }
-            /***/
-        }
+    inicializa(n / 2 + 1);
     
-    }
-    /***/
-    if(TESTE){
-        if(tree != NULL){
-            printf("tree %p, p-> %p, key-> %ld; r-> %p(%ld); l-> %p(%ld)\n",
-                getRoot(), tree->p, getKey(getItem(tree)),
-                tree->right, getKey(getItem(tree->right)),
-                tree->left, getKey(getItem(tree->left)));
-        }
+    num = criaItem(8);
+    p = criaNode(num);
+    insereNode(p);
+    num = criaItem(18);
+    p = criaNode(num);
+    insereNode(p);
+    num = criaItem(3);
+    p = criaNode(num);
+    insereNode(p);
+    if(tree != NULL){
+    printf("tree %p p-> %p; key-> %ld r-> %p(%ld); l-> %p(%ld)\n",
+            getRoot(), tree->p, getKey(getItem(tree)),
+            tree->right, getKey(getItem(tree->right)),
+            tree->left, getKey(getItem(tree->left)));
     } 
-    /***/
+    
+    p = maximo(getRoot());
+    printf("Maximo = %ld\n", getKey(getItem(p)));
+    p = minimo(getRoot());
+    printf("Minimo = %ld\n", getKey(getItem(p)));
+    p = busca(getRoot(), 8);
+    printf("Busca 8 = %ld\n", getKey(getItem(p)));
+    p = maximo(getRoot());
+    p = predecessor(p);
+    printf("predecessor = %ld\n", getKey(getItem(p)));
+    p = predecessor(p);
+    printf("predecessor = %ld\n", getKey(getItem(p)));
+    p = predecessor(p);
+    printf("predecessor = %ld\n", getKey(getItem(p)));
+    
+    p = minimo(getRoot());
+    p = sucessor(p);
+    printf("sucessor = %ld\n", getKey(getItem(p)));
+    p = sucessor(p);
+    printf("sucessor = %ld\n", getKey(getItem(p)));
+    p = sucessor(p);
+    printf("sucessor = %ld\n", getKey(getItem(p)));
 
-    if(n % 2 != 0)
-        printf("%ld.0\n", getKey(getItem(maximo(getRoot()))));
-    else{
-        p = maximo(getRoot());
-        x = (float)getKey(getItem(p));
-        y = (float)getKey(getItem(predecessor(p)));
-        /***/
-        if(TESTE){
-            printf("x = %ld = %f , y = %ld = %f\n", getKey(getItem(p)), x,
-                    getKey(getItem(predecessor(p))), y);
-        }
-        /***/
-        x /= 2;
-        y /= 2;
-        printf("%.1f\n", x + y);
-    } 
->>>>>>> 037873402102ff5cbbff6d2fead3d77c2d3f6c88
 
     return 0;
-}
+    }
