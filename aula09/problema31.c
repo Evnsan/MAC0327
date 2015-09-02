@@ -10,11 +10,11 @@
 
 #define TESTE 0
 
-int calculaM(int total, int escolhidos);
+unsigned long long calculaM(int total, int escolhidos);
 
 int main(){
     int n;
-    int saida;
+    unsigned long long saida;
 
     /*controle*/
     int i;
@@ -27,21 +27,31 @@ int main(){
     if(n > 0){
         /*computando metade das bandeiras. i.e. começando com branco*/
         saida = 1; /*i = 0*/
-        for(i = 1; i <= n / 2; i++)
+        if(n%2 == 0){
+            for(i = 1; i < n / 2; i++)
             saida += calculaM(n - (1+i), i);
+        }
+        else{
+            for(i = 1; i <= n / 2; i++)
+            saida += calculaM(n - (1+i), i);
+        }
+
         /*calculando total*/
         saida *= 2;
     }
 
     /*Saida*/
-    printf("%d\n", saida);
+    printf("%llu\n", saida);
 
     return 0;
 }
 
-int calculaM(int total, int escolhidos){
-    int dividendo, divisor;
+unsigned long long calculaM(int total, int escolhidos){
+    unsigned long long dividendo, divisor;
     int i;
+
+    if(escolhidos > total/2)
+        escolhidos = total - escolhidos;
 
     dividendo = 1;
     for(i = total; i >  total - escolhidos; i--){
@@ -53,7 +63,7 @@ int calculaM(int total, int escolhidos){
     }
     /***/
     if(TESTE){
-        printf("Chamada com total = %d, escolhidos = %d e retorno = %d\n",
+        printf("Chamada com total = %d, escolhidos = %d e retorno = %llu\n",
                 total, escolhidos, dividendo / divisor);
     }
     /***/
