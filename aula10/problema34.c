@@ -22,9 +22,11 @@ int main(){
 
     /*controle*/
     int i, y;
+    int primeiro;
 
+    primeiro = 1;
     /*Entrada*/
-    while(scanf("%d %d", &W, &k) && (W  != 0 || k != 0)){
+    while(scanf("%d %d", &W, &k) == 2){
         scanf("%d", &n);
         for(i = 1; i <= n; i++){
             scanf("%d %d", &d[i], &v[i]);
@@ -65,9 +67,10 @@ int main(){
             }
         }
 
-
-
         /*Saida*/
+        if(!primeiro)
+            printf("\n");
+        primeiro = 0;
         printf("%d\n",t[n][W]);
         nrecovered = 0;
         for(i = 1; i <= n; i++){
@@ -78,7 +81,6 @@ int main(){
             if(saida[i])
                 printf("%d %d\n", d[i], v[i]);
         }
-        printf("\n");
     }
 
     return 0;
