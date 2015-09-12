@@ -1,0 +1,8 @@
+problema24.cpp: In function ‘int DIGts()’:
+problema24.cpp:30:21: error: ‘TSdfsR’ was not declared in this scope
+         if(!TSdfsR(v))
+                     ^
+problema24.cpp: In function ‘int TSdfsR(int)’:
+problema24.cpp:40:14: error: ‘u’ was not declared in this scope
+         w = *u; 
+              ^

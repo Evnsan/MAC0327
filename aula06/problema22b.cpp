@@ -7,15 +7,19 @@
 /***********************************/
 
 /*Implementacao de maxheap - com remocao       */
+/*Surgiu algum erro na implementacao           */
+/*apelando para bibliotecas prontas de c++     */
 /***********************************************/
-#include<stdlib.h>
-#include<stdio.h>
+//#include<stdlib.h>
+//#include<stdio.h>
+
+#include <bits/stdc++.h>
 
 #define MAX 250000
 #define TESTE_NIVEL_1 0
-#define TESTE_NIVEL_2 1
+#define TESTE_NIVEL_2 0
 
-
+using namespace std;
 
 /*dados satelites*/
 typedef unsigned int Item;
@@ -24,7 +28,7 @@ typedef unsigned int Item;
     /*vetor de Itens*/
 
 /*variaveis globais para heap*/
-Item heap[MAX/2 + 2];
+Item heap[MAX/2 + 3];
 unsigned int tamanho = 0;
 
 /*remove max*/
@@ -93,8 +97,9 @@ int main(){
     scanf("%ld", &n);
 
     for(i = 0; i < n/2 + 1; i++){
-        scanf("%ld", &entrada);
-        insereItem(entrada);
+        scanf("%u", &entrada);
+        //insereItem(entrada);
+	heap[i] = entrada;
         /***/
         if(TESTE_NIVEL_1){
             printf("Heap:\n");
@@ -104,10 +109,15 @@ int main(){
         } 
         /***/
     }
+    make_heap(heap,heap+n/2+1);
+    
     for(; i < n; i++){
-        scanf("%ld", &entrada);
-        insereItem(entrada);
-        p = removeMax();
+        scanf("%u", &entrada);
+        //insereItem(entrada);
+        //p = removeMax();
+	heap[n/2+1] = entrada;
+	push_heap(heap,heap+n/2+2);
+	pop_heap(heap,heap+n/2+2);
         /***/
         if(TESTE_NIVEL_1){
             printf("Heap:\n");
@@ -130,14 +140,16 @@ int main(){
     /***/
 
     if(n % 2 != 0)
-        printf("%ld.0\n", heap[0]);
+        printf("%.1f\n", 1.0*heap[0]);
     else{
         /*x = (double)heap[0];
         //y = (double)(heap[1]>heap[2]?heap[1]:heap[2]);
         //x /= 2;
         //y /= 2;*/
-        x = (1.0*(heap[0] + (heap[1]>heap[2]?heap[1]:heap[2])))/2;
-        printf("%.1f\n", x );
+      x = 1.0*heap[0];
+      pop_heap(heap,heap+n/2+1);
+      y = 1.0*heap[0];
+      printf("%.1f\n",(x+y)/2);
     } 
 
     return 0;
