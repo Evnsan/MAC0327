@@ -40,24 +40,23 @@ int main(){
 
     /*Entrada*/
     cin >> nlinhas;
-    Dig_n = 0;
     for(int i = 0; i < nlinhas; i++){
         cin >> entrada1 >> entrada2 >> entrada3;
         /*programadores.find("entrada1") == m.end()*/
-        if(!prog.count(entrada1)){ 
+        if(prog.find("entrada1") == prog.end()){ 
             prog[entrada1] = Dig_n;
             nProg[Dig_n] = entrada1;
-            Dig_n++;
+            dig_n++;
         }
-        if(!prog.count(entrada2)){ 
+        if(prog.find("entrada2") == prog.end()){ 
             prog[entrada2] = Dig_n;
             nProg[Dig_n] = entrada2;
-            Dig_n++;
+            dig_n++;
         }
-        if(!prog.count(entrada3)){ 
+        if(prog.find("entrada3") == prog.end()){ 
             prog[entrada3] = Dig_n;
             nProg[Dig_n] = entrada3;
-            Dig_n++;
+            dig_n++;
         }
         Dig_adj[prog[entrada1]][prog[entrada2]] = 1;
         Dig_adj[prog[entrada1]][prog[entrada3]] = 1;
@@ -70,10 +69,8 @@ int main(){
     for(int v = 0; v < Dig_n; v++){
         lbl[v] = -1;
     }
-    if(prog.count("Isenbaev")){
-        borda.push(prog["Isenbaev"]);
-        lbl[prog["Isenbaev"]] = 0;
-    }
+    borda.push(prog["Isenbaev"]);
+    lbl[prog["Isenbaev"]] = conta++;
     while(!borda.empty()){
         vert = borda.front();
         borda.pop();
@@ -84,22 +81,11 @@ int main(){
             }
         }
     }
-    /***/
-    if(TESTE_NIVEL_2){
-        cout << "O prog é:\n";
-        for (auto it = prog.begin(); it != prog.end(); ++it)
-            cout << it->first << " => " << it->second << '\n';
-    }
-    /***/
+        
+
+
 
     /*Saida*/
-    for( auto it = prog.begin(); it != prog.end(); ++it){
-        cout << it->first << " ";
-        if(lbl[it->second] == -1)
-            cout << "undefined \n";
-        else
-            cout << lbl[it->second] << "\n";
-    }
-
+    
     return 0;
 }
