@@ -3,110 +3,69 @@
 /***********************************/
 /***Evandro Augusto Nunes Sanches***/
 /***********************************/
-/***Problema  01 - segunda rodada***/
+/***********Problema 01*************/
 /***********************************/
 
 #include<bits/stdc++.h>
 
-#define MAX 100000
-#define NMAX 20
+#define MAX 65536 
+#define TAB_LIN 4
+#define TAB_COL 4
+#define MASK_LIN 3
+#define MASK_COL 3
+#define TESTE_NIVEL_1 1
 #define TESTE_NIVEL_1 0
-#define TESTE_NIVEL_2 0
 
 using namespace std;
 
-vector< vector<int> > p(2, vector<int>(NMAX*(MAX + 1), 0));
-int n = 0;
+/*vector<int> tsi;*/
 
-int total;
-int pmax;
 
-/***main***/
-int main(){
-    int entrada;
-    int anterior;
-    float s;
-    float min;
+int main(){ 
+    unsigned int tabuleiro;
+    char linha[TAB_LIN + 1];
+    int mask[MASK_LIN][MASK_COL];
 
-    /*Entrada*/
-    cin >> n;
-
-    cin >> entrada;
-    total = entrada;
-    pmax = entrada;
-    p[0][entrada] = 1;
-    p[0][0] = 1;
-    anterior = 0;
+    /*entrada*/
+    for(int i = 0; i < TAB_LIN; i++){
+        cin >> linha;
+        for(int j = 0; j < TAB_COL; j++){
+            if(linha[j] == 'B'){
+                tabuleiro = tabuleiro | (1 << (i * 4 + j));
+            }
+        }
+    }
     
-    for(int i = 1; i < n; i++){
-        cin >> entrada;
-        total += entrada;
-        if(entrada > pmax){pmax = entrada;}
-        /***/
-        if(TESTE_NIVEL_1){
-            printf("Comecou elemento %d com anterior %d\n", entrada, anterior);
-        }
-        /***/
-        for(int j = 0; j <= total; j++){
-            if(p[anterior][j] == 1 
-               || ( j - entrada >= 0) && p[anterior][j - entrada] == 1){
-                /***/
-                if(TESTE_NIVEL_1){
-                    if(j == 32) {printf("Setou 32 com entrada = %d\n",
-                            entrada);}
-                    printf("Setou linha = %d e coluna %d\n", (anterior+1)%2 , j);
-                }
-                /***/
-                p[(anterior+1)%2][j] = 1;
+    /***/
+    if(TESTE_NIVEL_2){
+        cout << "MASK <<" << endl;
+    }
+    /***/
+
+    for(int i = 0; i < MASK_LIN; i++){
+        cin >> linha;
+        for(int j = 0; j < MASK_COL; j++){
+            if(linha[j] == '1'){
+                mask[i][j] = 1;
+            }
+            else{
+                mask[i][j] = 0;
             }
         }
-        /***/
-        if(TESTE_NIVEL_1){
-            printf("Terminou elemento %d com anterior %d\n", entrada, anterior);
-        }
-        /***/
-        anterior = (anterior+1)%2;
     }
     /***/
     if(TESTE_NIVEL_2){
-        printf("Atual = %d\n", anterior);
-        printf("##Matriz P##\n");
-        printf("  |");
-        for(int i = 0; i <= total; i++){
-            printf(" %2d", i);
-        }
-        printf("\n");
-        for(int i = 0; i < 2; i++){
-            printf("%2d| ", i);
-            for(int j = 0; j <= total; j++){
-                printf("%2d ", p[i][j]);
-            }
-            printf("\n");
-        }
-        printf("############\n");
-    }
-    /***/
-    /*Processamento*/
-    s = total/2.0;
-    /***/
-    if(TESTE_NIVEL_2){
-        printf("Total = %d ==> s = %.2f\n", total, s);
-        printf("Linha final = %d\n", anterior);
-    }
-    /***/
-    min = s;
-    for(int i = 0; i < int(s+1); i++){
-        if(p[anterior][i] == 1 && (min > abs(s - i))){
-            /***/
-            if(TESTE_NIVEL_2){
-            printf(" Min = %.1f, (s - i) = %.1f, i = %d\n",
-                    min, abs(s-i), i);
-            }
-            /***/
-            min = abs(s - i);
+        cout << "Tabuleiro: " << tabuleiro << endl;
+        cout << "MASK:" << endl;
+        for( int i = 0; i < MASK_LIN; i++){
+            for(int j = 0; j < MASK_COL; j++)
+                cout << mask[i][j];
+            cout << endl;
         }
     }
-    /*Saida*/
-    printf("%d\n", (int)(min * 2));
+    /***/
+
+
+
     return 0;
 }
