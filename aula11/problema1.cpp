@@ -16,12 +16,10 @@
 #define TAB_PRETO 65535 
 #define TAB_BRANCO 0
 
-#define TESTE_NIVEL_1 0
+#define TESTE_NIVEL_1 1
 #define TESTE_NIVEL_2 0
 
 using namespace std;
-
-/*vector<int> tsi;*/
 
 unsigned int geraMask(int x, int y, int mask[MASK_LIN][MASK_COL]){
     unsigned int retorno = 0;
@@ -76,6 +74,7 @@ int main(){
     queue <unsigned int> borda;
 
     /*entrada*/
+    tabuleiro = 0;
     for(int i = 0; i < TAB_LIN; i++){
         cin >> linha;
         for(int j = 0; j < TAB_COL; j++){
@@ -103,12 +102,13 @@ int main(){
         }
     }
     /***/
-    if(TESTE_NIVEL_1){
+    if(TESTE_NIVEL_2){
         cout << "Tabuleiro: " << tabuleiro << endl;
         cout << "MASK:" << endl;
-        for( int i = 0; i < MASK_LIN; i++){
-            for(int j = 0; j < MASK_COL; j++)
+        for(int i = 0; i < MASK_LIN; i++){
+            for(int j = 0; j < MASK_COL; j++){
                 cout << mask[i][j];
+            }
             cout << endl;
         }
     }
@@ -119,7 +119,7 @@ int main(){
         for(int j = 0; j < TAB_COL; j++){
             masks[i*TAB_COL + j] = geraMask(i, j, mask);
             /***/
-            if(TESTE_NIVEL_1){
+            if(TESTE_NIVEL_2){
                cout << "Mask" << i*TAB_COL + j << ": ";
                cout << masks[i*TAB_COL + j] << endl;
             }
@@ -132,7 +132,6 @@ int main(){
         cout << 0 << endl;
         return 0;
     }
-
 
     borda.push(tabuleiro);
     lbl[tabuleiro] = 0;
@@ -151,7 +150,6 @@ int main(){
             }
              
             if(!lbl.count(tabPos)){
-                cout << "Adicionarei\n";
                 lbl[tabPos] = lbl[tabPre] + 1;
                 borda.push(tabPos);
             }
@@ -159,6 +157,20 @@ int main(){
         }
     }
     cout << "Impossible\n";
+    
+    /***/
+    if(TESTE_NIVEL_2){
+        cout << "Tabuleiro: " << tabuleiro << endl;
+        cout << "MASK:" << endl;
+        for(int i = 0; i < MASK_LIN; i++){
+            for(int j = 0; j < MASK_COL; j++){
+                cout << mask[i][j];
+            }
+            cout << endl;
+        }
+    }
+    /***/
+
 
 
     return 0;
