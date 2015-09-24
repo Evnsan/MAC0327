@@ -3,12 +3,12 @@
 /***********************************/
 /***Evandro Augusto Nunes Sanches***/
 /***********************************/
-/***********Problema 24*************/
+/***********Problema 09*************/
 /***********************************/
 
 #include<bits/stdc++.h>
 
-#define MAX 100000
+#define MAX 100
 #define TESTE_NIVEL_1 0
 
 using namespace std;
@@ -67,42 +67,37 @@ return 1;
 
 /***main***/
 int main(){
-    int m;
-    int entrada1, entrada2;
+    int entrada1;
 
     /*Entrada*/
-    cin >> Dig_n >> m;
-    while(Dig_n != 0 && m != 0){
-
-        for(int i = 0; i < m; i++){
-            cin >> entrada1 >> entrada2;
-            Dig_adj[entrada1].push_back(entrada2);
+    cin >> Dig_n;
+    for(int i = 1; i <= Dig_n; i++){
+        cin >> entrada1;
+        while(entrada1 != 0){
+            Dig_adj[i].push_back(entrada1);
+            cin >> entrada1;
         }
-        /***/
-        if(TESTE_NIVEL_1){
-            printf("##Dig_adj##\n");
-            for(int i = 0; i <= Dig_n; i++){
-                for(auto a = Dig_adj[i].begin(); a != Dig_adj[i].end(); a++){
-                    printf("%d->%d\n", i , (*a));
-                }
-            }
-            printf("###########\n");
-        }
-        /***/
-    
-        /*Processamento  -  Saida*/
-        if(DIGts()){
-            for(int i = Dig_n - 1; i >= 0; i--)
-                printf("%d\n", tsi[i]);
-        }
-        else
-            printf("IMPOSSIBLE\n");
-
-        for(int i = 1; i <= Dig_n; i++)
-           Dig_adj[i].clear();
-        tsi.clear();
-    
-        cin >> Dig_n >> m;
     }
+    /***/
+    if(TESTE_NIVEL_1){
+        printf("##Dig_adj##\n");
+        for(int i = 0; i <= Dig_n; i++){
+            for(auto a = Dig_adj[i].begin(); a != Dig_adj[i].end(); a++){
+                printf("%d->%d\n", i , (*a));
+            }
+        }
+        printf("###########\n");
+    }
+    /***/
+
+    /*Processamento  -  Saida*/
+    if(DIGts()){
+        for(int i = Dig_n - 1; i >= 0; i--)
+            printf("%d ", tsi[i]);
+        printf("\n");
+    }
+    else
+        printf("IMPOSSIBLE\n");
+    
     return 0;
 }
