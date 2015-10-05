@@ -18,6 +18,13 @@ vector<int> Dig_adj[MAX + 1];
 int Dig_n = 0;
 long int m; /*m arestas*/
 
+/*Karger-Stein (unioni-find)*/
+vector<pair<int, int> > KS_edgs;
+/*Obs.: swap(v[n], v.back());
+      v.pop_back();*/
+vector<int> KS_vert[MAX + 1];
+int KS_n = 0;
+
 vector<int> pre(MAX + 1);
 vector<int> parent(MAX + 1);
 vector<int> low(MAX + 1);
@@ -78,6 +85,10 @@ unsigned long int BCCr(int v){
                     tamanho++;
                     aresta = componente.top();
                     componente.pop();
+                    /*adiciona aresta e defini vert.*/
+                    KS_edgs.push_back(aresta);
+                    KS_vert[aresta.first] = aresta.first;
+                    KS_vert[aresta.second] = aresta.second;
                     /***/
                     if(TESTE_NIVEL_2){
                         cout << "==>vai comparar: " << componente.top().first << "---" <<componente.top().second << endl;
@@ -93,6 +104,10 @@ unsigned long int BCCr(int v){
                 tamanho++;
                 aresta = componente.top();
                 componente.pop();
+                /*adiciona aresta e defini vert.*/
+                KS_edgs.push_back(aresta);
+                KS_vert[aresta.first] = aresta.first;
+                KS_vert[aresta.second] = aresta.second;
                 /***/
                 if(TESTE_NIVEL_1){
                     cout << aresta.first << "---" << aresta.second << " ";
@@ -110,10 +125,12 @@ unsigned long int BCCr(int v){
                     bridges++;
                 }
                 else{
-                    /*colocar aresta v-w no grafo*/
                     /*chamar Karger-Stein para o grafo*/
-                    /*retorno += karger*/
+                    KS_n = tamanho;
+                    retorno += karger_stein();
                 }
+                /*Redefine estruturas KS*/
+                KS_edgs.clear();
             }
         }
         else if(w != parent[v] && pre[w] < low[v]){
@@ -187,8 +204,6 @@ unsigned long int waysCount(){
                     cout << aresta.first << "---" << aresta.second << " " << "bridge!";
                     cout << endl;
                 }
-                /*contar quantos cortes*/
-                /*retorno += conta*/
             }
         }
     }
@@ -223,14 +238,5 @@ int main(){
     }
     /***/
     cout << waysCount() << endl;
-    /*Processamento  -  Saida*/
-/*    if(DIGts()){
-        for(int i = Dig_n - 1; i >= 0; i--)
-            printf("%d ", tsi[i]);
-        printf("\n");
-    }
-    else
-        printf("IMPOSSIBLE\n");
-  */  
     return 0;
 }
