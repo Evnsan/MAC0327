@@ -10,12 +10,11 @@
 
 #define MAXROTAS 1000
 #define MAXPARADAS 10000
-#define TESTE_NIVEL_1 1
+#define TESTE_NIVEL_1 0
 
 using namespace std;
 
 struct node {
-    int nparada;
     int estacao;
     node *prox;
 };
@@ -28,25 +27,34 @@ int n = 0;
 int maxparada = 0;
 
 
+int ePossivel(){
+    for(int i = 0; i < n; i++){
+        if(!rotasIniciadas[i]){
+            return 0;
+        }
+    }
+    return 1;
+}
+
 int percorrer(int rota, int estacao){
     node *p;
     node* inicio;
 
-    rotasIniciadas[r] = 1;
-    p = rotas[r];
-    while( p->estacao != estacao) p = p->prox;
+    rotasIniciadas[rota] = 1;
+    p = rotas[rota];
+    while( p->estacao != estacao ) p = p->prox;
     inicio = p;
     p = p->prox;
-
-    while(p != inicio){
+    do{
+        saida.push(p->estacao);
         for(auto a = paradas[p->estacao].begin(); a != paradas[p->estacao].end(); a++){
             if(rotasIniciadas[a->first] == 0){
-                saida.push(p->estacao);
                 percorrer(a->first, p->estacao);
-                break;
+                paradas[p->estacao].erase(a->first);
             }
         }
-    }
+        p = p->prox;
+    }while(p != inicio->prox);
 
     return 0;
 }
@@ -67,18 +75,17 @@ int main(){
         if(maxparada < entrada1) maxparada = entrada1;
         paradas[entrada1][i] = 1;
         p = new node;
-        p->nparada = 0;
         p->estacao = entrada1;
         rotas[i] = p;
-        for(int j = 1; j <= m; j++){
+        for(int j = 1; j < m; j++){
             p->prox = new node;
             p = p->prox;
             cin >> entrada1;
             if(maxparada < entrada1) maxparada = entrada1;
-            p->nparada = j;
             p->estacao = entrada1;
             paradas[entrada1][i] = 1;
         }
+        cin >> entrada1; /*descartando a ultima*/
         p->prox = rotas[i];
     }
     /***/
@@ -114,11 +121,18 @@ int main(){
     }
 
     /*Processamento  -  Saida*/
-    if(0){
+    saida.push(rotas[0]->estacao);
+    percorrer(0, rotas[0]->estacao);
+    if(ePossivel()){
+        printf("%d", saida.size() - 1);
+        while(!saida.empty()){
+            printf(" %d", saida.front());
+            saida.pop();
+        }
         printf("\n");
     }
     else
-        printf("IMPOSSIBLE\n");
+        printf("0\n");
     
     return 0;
 }
