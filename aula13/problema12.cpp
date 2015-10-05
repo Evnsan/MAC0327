@@ -14,24 +14,37 @@
 
 using namespace std;
 
-vector<int> rotas[MAXROTAS];
-vector<int> paradas[MAXPARADAS + 1];
-vector<int> rotasIniciadas(MAXROTAS);
+struct node {
+    int nparada;
+    int estacao;
+    node *prox;
+};
+
+node *rotas[MAXROTAS];
+map<int, int> paradas[MAXPARADAS + 1];
+int rotasIniciadas[MAXROTAS];
 queue<int> saida;
 int n = 0;
+int maxparada = 0;
 
-int percorrer(int r){
+
+int percorrer(int rota, int estacao){
+    node *p;
+    node* inicio;
+
     rotasIniciadas[r] = 1;
-    for(auto a = rotas[r].begin(); a != rotas[r].end(); a++){
-        for(auto b = paradas[*a].begin(); b != paradas[*a].end(); b++){
-            if(!rotasIniciadas[*b]){
-                percorrer(*b);
-            }
-            else if( *b == r){
-                swap(*b, paradas[*a].back());
-                paradas.pop_back();
-            }
+    p = rotas[r];
+    while( p->estacao != estacao) p = p->prox;
+    inicio = p;
+    p = p->prox;
 
+    while(p != inicio){
+        for(auto a = paradas[p->estacao].begin(); a != paradas[p->estacao].end(); a++){
+            if(rotasIniciadas[a->first] == 0){
+                saida.push(p->estacao);
+                percorrer(a->first, p->estacao);
+                break;
+            }
         }
     }
 
@@ -39,34 +52,66 @@ int percorrer(int r){
 }
 
 
+
 /***main***/
 int main(){
     int m;
     int entrada1;
+    node *p;
 
     /*Entrada*/
     cin >> n;
     for(int i = 0; i < n; i++){
         cin >> m;
-        for(int j = 0; j <= m; j++){
+        cin >> entrada1;
+        if(maxparada < entrada1) maxparada = entrada1;
+        paradas[entrada1][i] = 1;
+        p = new node;
+        p->nparada = 0;
+        p->estacao = entrada1;
+        rotas[i] = p;
+        for(int j = 1; j <= m; j++){
+            p->prox = new node;
+            p = p->prox;
             cin >> entrada1;
-            parada[entrada1].push_back(i);
-            rotas[i].push_back(entrada1);
+            if(maxparada < entrada1) maxparada = entrada1;
+            p->nparada = j;
+            p->estacao = entrada1;
+            paradas[entrada1][i] = 1;
         }
+        p->prox = rotas[i];
     }
     /***/
     if(TESTE_NIVEL_1){
-        printf("##Dig_adj##\n");
+        printf("##Rotas##\n");
         for(int i = 0; i < n; i++){
             printf("%d)", i);
-            for(auto a = rotas[i].begin(); a != rotas[i].end(); a++){
-                printf("%d->", (*a));
+            p = rotas[i];
+            printf("%d->", p->estacao);
+            p = p->prox; 
+            while(p != rotas[i]){
+                printf("%d->", p->estacao);
+                p = p->prox; 
+
             }
             printf("FIM\n");
         }
         printf("###########\n");
+        printf("\n##Paradas##\n");
+        for(int i = 1; i <= maxparada; i++){
+            cout << "Parada " << i << endl;
+            for(auto a = paradas[i].begin(); a != paradas[i].end(); a++){
+               cout << a->first;
+            }
+            cout << endl;
+       }
+       printf("###########\n");
     }
     /***/
+
+    for(int i = 0; i < n; i++){
+        rotasIniciadas[i] = 0;
+    }
 
     /*Processamento  -  Saida*/
     if(0){
