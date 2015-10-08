@@ -1,0 +1,4 @@
+p20 - 15-puzzle problem
+p21 - Cockroaches!
+p22 - Mosaic
+p23 - Two rounds
