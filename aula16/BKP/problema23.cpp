@@ -21,7 +21,6 @@ vector<int> cor(MAXV + 1);
 map<int, vector<int> > ncor;
 vector<int> saida1;
 vector<int> saida2;
-map<int, map<int, int> > somas;
 int cormax;
 
 int di[MAXV];
@@ -94,9 +93,6 @@ int colocaNaSaida(int s1, int s2){
 
 
 int separaR(int atual, int soma, int comp){
-    if(somas[atual].count(soma))
-        return 0;
-    somas[atual][soma] = 1;
     if(atual < comp){
         if(di[atual] == 0){
             if(separaR(atual + 1, soma, comp)){
@@ -190,8 +186,6 @@ int main(){
             }
             printf("\n");
         }
-        else
-            printf("IMPOSSIBLE\n");
     }
 
     else
