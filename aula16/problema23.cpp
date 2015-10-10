@@ -18,7 +18,7 @@ vector<int> Dig_adj[MAXV + 1];
 int Dig_n = 0;
 
 vector<int> cor(MAXV + 1);
-map<int, int> ncor;
+map<int, vector<int> > ncor;
 vector<int> saida1;
 vector<int> saida2;
 int cormax;
@@ -31,7 +31,7 @@ int TSdfsR(int v, int c){
     int nextc;
 
     cor[v] = c;
-    ncor[c] = ncor[c] + 1;
+    ncor[c].push_back(v);
     nextc = (c%2 == 1 ? c - 1 : c + 1);
     /***/
     if(TESTE_NIVEL_1){
@@ -76,8 +76,6 @@ int DIGtwocolor(){
         if (cor[v] == -1){
             c += 2;
             cormax = c;
-            ncor[c] = 0;
-            ncor[c+1] = 0;
             cor[v] = c; 
             if(!TSdfsR(v, c))
                 return 0;
@@ -85,25 +83,46 @@ int DIGtwocolor(){
     return 1;
 }
 /*****************/
+int colocaNaSaida(int s1, int s2){
+    for(auto a : ncor[s1])
+        saida1.push_back(a);
+    for(auto a : ncor[s2])
+        saida2.push_back(a);
+    return 1;
+}
+
+
 int separaR(int atual, int soma, int comp){
-    printf("Entrou no comp: %d com soma = %d e comp = %d\n", atual, soma, comp);
     if(atual < comp){
-        if(di[atual] == 0)
-            return separaR(atual + 1, soma, comp);
+        if(di[atual] == 0){
+            if(separaR(atual + 1, soma, comp)){
+                colocaNaSaida(atual*2, atual*2 + 1);
+                return 1;
+            }
+            else
+                return 0;
+        }
         else{
             if(separaR(atual + 1, soma + di[atual], comp)){
-               return 1;
+                colocaNaSaida(atual*2, atual*2 + 1);
+                return 1;
             }
-            else{
-                return separaR(atual + 1, soma - di[atual], comp);
+            else if(separaR(atual + 1, soma - di[atual], comp)){
+                colocaNaSaida(atual*2 + 1, atual*2);
+                return 1;
             }
+            else return 0;
         }
     }
     else{
-        if(soma + di[atual] == 0)
+        if(soma + di[atual] == 0){
+            colocaNaSaida(atual*2, atual*2 + 1);
             return 1;
-        else if(soma - di[atual] == 0)
+        }
+        else if(soma - di[atual] == 0){
+            colocaNaSaida(atual*2 + 1, atual*2);
             return 1;
+        }
         else
             return 0;
     }
@@ -114,9 +133,8 @@ int separa(){
     int d;
     int componentes = cormax/2 + 1;
     for(int i = 0; i < componentes; i++){
-        d = ncor[2*i] - ncor[2*i+1];
-        di[i] = d > 0 ? d : -d; 
-/*        printf("d[%d] = %d\n", i, di[i]);*/
+        d = ncor[2*i].size() - ncor[2*i+1].size();
+        di[i] = d; 
     }
     if(!separaR(0, 0, componentes)){
         return 0;
@@ -158,11 +176,16 @@ int main(){
 
     /*Processamento  -  Saida*/
     if(DIGtwocolor()){
-        for(int i = 0; i <= Dig_n; i++)
-            printf("%d ", cor[i]);
-        printf("\n");
-        if(separa())
-            printf("é possivel!!!!!!!!!!!!\n");
+        if(separa()){
+            for(auto a : saida1){
+                printf("%d ", a);
+            }
+            printf("\n");
+            for(auto a : saida2){
+                printf("%d ", a);
+            }
+            printf("\n");
+        }
     }
 
     else
@@ -172,7 +195,7 @@ int main(){
         printf("###########\n");
         printf("CorMax = %d\n", cormax);
         for(auto a : ncor){
-            printf("cor = %d tem numero %d\n", a.first, a.second);
+            printf("cor = %d tem numero %d\n", a.first, a.second.size());
         }
         printf("###########\n");
     }
