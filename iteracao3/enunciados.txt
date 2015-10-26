@@ -1,3 +1,11 @@
 P1 - Jamaica
 P2 - Divide an Island
 P3 - Frontier
+P4 - Levko and Array Recovery
+P5 - Levko and Array 
+P6 - Levko and Strings
+P7 - Levko and Sets
+P8 - Levko and Game
+P9 - Rope
+P10 - Goat in the Garden
+P11 - Genie Bomber
