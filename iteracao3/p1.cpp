@@ -10,7 +10,7 @@
 
 #include<bits/stdc++.h>
 
-#define TESTE_NIVEL_1 1
+#define TESTE_NIVEL_1 0
 #define MAXS 10000
 #define MAXN 300
 
@@ -24,7 +24,7 @@ typedef tuple<double, double, bool> Reta;    /*("0",Xo, ypar)*/
 /*****************/
 
 /***GLOBAIS***/
-map< Reta, double > rotas;     /*("0",Xo, ypar) -> r*/
+map< Reta, long int > rotas;     /*("0",Xo, ypar) -> r*/
 
 /***main***/
 int main(){
@@ -32,7 +32,7 @@ int main(){
     vector< pair<long int, long int> > cidades;
     pair<long int, long int> entrada;
     double tetha;
-    double r;
+    long int r;
     double x0;
     bool ypar;                                  /*paralelo ao eixo y*/
     pair< long int, long int> p0, p1;
@@ -69,29 +69,50 @@ int main(){
                 ypar = true;
                 tetha = 0;
                 x0 = p0.first;
-                cout << "X==X reta " << (i*cid_n)+j << ": "
-                     << tetha << " " << x0 << " " << ypar << endl;
+                /***/
+                if(TESTE_NIVEL_1){
+                    cout << "X==X reta " << (i*cid_n)+j << ": "
+                         << tetha << " " << x0 << " " << ypar << endl;
+                }
+                /***/
             }
             else if(p0.second == p1.second){
                 ypar = false;
                 tetha = 0;
                 x0 = p0.second;
-                cout << "Y==Y reta " << (i*cid_n)+j << ": "
-                     << tetha << " " << x0 << " " << ypar << endl;
+                /***/
+                if(TESTE_NIVEL_1){
+                    cout << "Y==Y reta " << (i*cid_n)+j << ": "
+                         << tetha << " " << x0 << " " << ypar << endl;
+                }
+                /***/
             }
             else{
                 ypar = false;
                 tetha = double((p1.second - p0.second))/
                     (p1.first - p0.first);
-                cout << "Calculo do theta: p0(" << p0.first
-                     << "," << p0.second << ") p1(" << p1.first
-                     << "," << p1.second << ")" << endl;
+                /***/
+                if(TESTE_NIVEL_1){
+                    cout << "Calculo do theta: p0(" << p0.first
+                         << "," << p0.second << ") p1(" << p1.first
+                        << "," << p1.second << ")" << endl;
+                }
+                /***/
                 x0 = p0.first - double(p0.second)/tetha;
-                cout << "P!=P reta " << (i*cid_n)+j << ": "
-                     << tetha << " " << x0 << " " << ypar << endl;
+                /***/
+                if(TESTE_NIVEL_1){
+                    cout << "P!=P reta " << (i*cid_n)+j << ": "
+                         << tetha << " " << x0 << " " << ypar << endl;
+                }
+                /***/
             }
-            r = sqrt(pow((p0.first - p1.first), 2.0)
-                    + pow((p0.second - p1.second), 2.0) );
+            r = (p0.first - p1.first)*(p0.first - p1.first)
+                    + (p0.second - p1.second)*(p0.second - p1.second);
+            /***/
+            if(TESTE_NIVEL_1){
+                cout << setprecision(9) << r << endl;
+            }
+            /***/
             reta = make_tuple(tetha, x0, ypar);
             /***/
             if(TESTE_NIVEL_1){
@@ -121,8 +142,10 @@ int main(){
     
     /*saida*/
     saida = 0;
+    cout << setprecision(9) << " saida: 0" << endl;
     for(auto a : rotas){
-        saida += a.second;
+        saida += double(sqrt(a.second));
+        cout << "+ " << double(sqrt(a.second)) << " = " << saida << endl;
     }
     /*cout << round(saida) << endl;*/
     printf("%.0lf\n",  floor(saida + .5));
