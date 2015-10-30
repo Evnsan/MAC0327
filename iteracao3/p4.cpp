@@ -10,10 +10,10 @@
 
 #include<bits/stdc++.h>
 
-#define TESTE_NIVEL_1 1
+#define TESTE_NIVEL_1 0
 #define MAXN 5000
 #define MAXM 5000
-#define INF 50000001
+#define INF 1000000001
 
 using namespace std;
 

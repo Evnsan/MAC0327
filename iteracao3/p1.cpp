@@ -20,6 +20,13 @@ using namespace std;
 
 typedef tuple<double, double, bool> Reta;    /*("0",Xo, ypar)*/
 
+/* "0"  -> tangente do menor angulo formado pela reta que passa pelos dois
+  pontos e a reta paralela ao eixo x no ponto com menor oordenada.
+  O valor é positivo se o angulo é percorrido no sentido horário, e énegativo
+  c.c.*/
+/* Xo   -> abscissa do ponto sobre o eixo x que pertence a reta. */
+/* ypar -> /1 , se os pontos formam reta paralela ao eixo y
+           \0 , caso contrario */
 
 /*****************/
 
@@ -98,7 +105,7 @@ int main(){
                         << "," << p1.second << ")" << endl;
                 }
                 /***/
-                x0 = p0.first - double(p0.second)/tetha;
+                x0 =(double)(p0.first - double(p0.second)/tetha);
                 /***/
                 if(TESTE_NIVEL_1){
                     cout << "P!=P reta " << (i*cid_n)+j << ": "
@@ -142,10 +149,14 @@ int main(){
     
     /*saida*/
     saida = 0;
+    /*
     cout << setprecision(9) << " saida: 0" << endl;
+    */
     for(auto a : rotas){
         saida += double(sqrt(a.second));
+        /*
         cout << "+ " << double(sqrt(a.second)) << " = " << saida << endl;
+        */
     }
     /*cout << round(saida) << endl;*/
     printf("%.0lf\n",  floor(saida + .5));
