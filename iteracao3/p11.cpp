@@ -10,20 +10,62 @@
 
 #include<bits/stdc++.h>
 
-#define TESTE_NIVEL_1 1
+#define TESTE_NIVEL_1 0
 #define MAX 100
-
-
+#define PI 3.14159265
+#define EPSILON 0.0000001
 using namespace std;
 
-
+/*Classe ponto*/
 struct Ponto{
     int x = 0, y = 0;
-
+    
+    /*Metodos*/
+    float norma(){
+        return sqrt(pow(x, 2.0) + pow(y, 2.0));
+    }
     double len(Ponto& p1){
         return sqrt(pow(x-p1.x,2.0) + pow(y-p1.y,2.0));
-    } 
-    
+    }
+    struct Ponto& rot(float graus){
+        float radianos = graus*PI/180;
+        float seno = sin(radianos);
+        float cosseno = cos(radianos);
+        int xant;
+
+        if(seno <= EPSILON) seno = 0;
+        if(cosseno <= EPSILON) cosseno = 0;
+        /***/
+        if(TESTE_NIVEL_1){
+            cout << "PONTO.ROT: recebeu " << graus
+                 << " e calculou seno=" << seno
+                 << "; cosseno=" << cosseno << endl;
+            cout << "PONTO.ROT: ponto antigo ("
+                 << x << "," << y << ")" << endl;
+        }
+        /***/
+        xant = x;
+        x = cosseno*x - seno*y;
+        y = seno*xant + cosseno*y;
+        return *this;
+    }
+
+    struct Ponto& setIntensidade(float k){
+        float norma = this->norma(); 
+        /***/
+        if(TESTE_NIVEL_1){
+            cout << "PONTO.SETINTENSIDADE: recebeu " << k
+                 << " e calculou norma=" << norma << endl;
+            cout << "PONTO.SETINTENSIDADE: ponto antigo ("
+                 << x << "," << y << ")" << endl;
+        }
+        /***/
+        x = x/norma * k;
+        y = y/norma * k;
+        return *this;
+    }
+
+
     struct Ponto& operator+=(const Ponto& p1){
         x += p1.x;
         y += p1.y;
@@ -32,6 +74,16 @@ struct Ponto{
     struct Ponto& operator+=(const double& k){
         x += k;
         y += k;
+        return *this;
+    }
+    struct Ponto& operator-=(const Ponto& p1){
+        x -= p1.x;
+        y -= p1.y;
+        return *this;
+    }
+    struct Ponto& operator-=(const double& k){
+        x -= k;
+        y -= k;
         return *this;
     }
     struct Ponto& operator = (const pair<int, int>& p){
@@ -50,7 +102,16 @@ Ponto operator+(Ponto p1, const double& k){
 Ponto operator+(const double k, Ponto p1){
     return p1 += k;
 }
-
+Ponto operator-(Ponto p1, const Ponto& p2){
+    return p1 -= p2;
+}
+Ponto operator-(Ponto p1, const double& k){
+    return p1 -= k;
+}
+Ponto operator-(const double k, Ponto p1){
+    return p1 -= k;
+}
+/*Final da Classe ponto*/
 
 
 
@@ -108,22 +169,5 @@ int main(){
     cout << max << endl;
 
     /****************/
-    
-    p1.x = 1;
-    p1.y = 6;
-
-    p2.x = 1;
-    p2.y = 1;
-
-    p3 = p1 + p2;
-
-    cout << "P1: " << p1.x << " " << p1.y << endl;
-    cout << "P2: " << p2.x << " " << p2.y << endl;
-    cout << "P3: " << p3.x << " " << p3.y << endl;
-
-    cout << "LEN: " << p1.len(p2) << endl;
-
-
-
     return 0;
 }
