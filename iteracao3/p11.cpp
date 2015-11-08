@@ -10,10 +10,10 @@
 
 #include<bits/stdc++.h>
 
-#define TESTE_NIVEL_1 1
+#define TESTE_NIVEL_1 0
 #define MAX 100
-#define PI 3.14159265
-#define EPSILON 0.0000001
+#define PI 3.141592653589793
+#define EPSILON 0.000000001
 using namespace std;
 
 /*Classe ponto*/
@@ -76,7 +76,20 @@ struct Ponto{
         /***/
         return *this;
     }
-
+    
+    int lexcmp(const Ponto& p1){
+        /*
+        cout << "LEXLESS: chegou c1=(" << x << ","
+             << y << ") e c2=(" << p1.x << ","
+             << p1.y << ")" << endl;
+        */
+        if(x != p1.x){
+            return x - p1.x;
+        }
+        else{
+           return y - p1.y;
+        }
+    } 
 
     struct Ponto& operator+=(const Ponto& p1){
         x += p1.x;
@@ -125,6 +138,13 @@ Ponto operator-(const double k, Ponto p1){
 }
 /*Final da Classe ponto*/
 
+int compareMyType(const void* entrada1, const void* entrada2){
+    Ponto p1, p2;
+    p1 = *(Ponto*)entrada1;
+    p2 = *(Ponto*)entrada2;
+
+    return p1.lexcmp(p2);
+}
 
 
 /***GLOBAIS***/
@@ -150,6 +170,9 @@ int main(){
         cidades[i] = make_pair(x,y);
     }
     cin >> bomb_r >> cid_r;
+
+    /*sort*/
+    qsort(cidades, cid_n, sizeof(Ponto), compareMyType);
 
     
     /***/
@@ -189,11 +212,15 @@ int main(){
                     d = cidB - cidA;
                     d.setIntensidade(d.norma()/2);
                     c1 = cidA + d;
+                    /*
                         cout << "PROCESSAMENTO(parte1): c1 = (" << c1.x << ","
                              << c1.y << ")" << endl;
+                             */
                     
                     d.rot(90);
-                    d.setIntensidade(sqrt(bomb_r*bomb_r - d.norma()*d.norma()));
+                    d.setIntensidade(
+                        sqrt(bomb_r*bomb_r - d.norma()*d.norma())
+                    );
                     c2 = c1 -d;
                     c1 += d;
                     /***/
@@ -212,8 +239,8 @@ int main(){
                                     pow(cidades[k].y - c1.y , 2.0);
                         double r2 = pow(cidades[k].x - c2.x , 2.0) + 
                                     pow(cidades[k].y - c2.y , 2.0);
-                        if(r1 <= bomb_r) maxc1++;
-                        if(r2 <= bomb_r) maxc2++;
+                        if(r1 <= bomb_r*bomb_r) maxc1++;
+                        if(r2 <= bomb_r*bomb_r) maxc2++;
                     }
                     if(maxc1 > max) max = maxc1;
                     if(maxc2 > max) max = maxc2;
