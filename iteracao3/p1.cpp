@@ -74,7 +74,7 @@ int main(){
                  << cidades[j].first << "," 
                  << cidades[j].second<< ")" << endl;*/
                 ypar = true;
-                tetha = 0;
+                tetha = 0.;
                 x0 = p0.first;
                 /***/
                 if(TESTE_NIVEL_1){
@@ -85,8 +85,8 @@ int main(){
             }
             else if(p0.second == p1.second){
                 ypar = false;
-                tetha = 0;
-                x0 = p0.second;
+                tetha = 0.;
+                x0 = 10001 + (double) p0.second;
                 /***/
                 if(TESTE_NIVEL_1){
                     cout << "Y==Y reta " << (i*cid_n)+j << ": "
@@ -96,7 +96,7 @@ int main(){
             }
             else{
                 ypar = false;
-                tetha = double((p1.second - p0.second))/
+                tetha = (double) (p1.second - p0.second)/
                     (p1.first - p0.first);
                 /***/
                 if(TESTE_NIVEL_1){
@@ -105,7 +105,8 @@ int main(){
                         << "," << p1.second << ")" << endl;
                 }
                 /***/
-                x0 =(double)(p0.first - double(p0.second)/tetha);
+//                x0 = p0.first - (double) p0.second / tetha;
+                x0 = (double) (p1.first * p0.second - p0.first * p1.second) / (p1.second - p0.second);
                 /***/
                 if(TESTE_NIVEL_1){
                     cout << "P!=P reta " << (i*cid_n)+j << ": "
@@ -128,9 +129,13 @@ int main(){
                      r  << endl;
             }
             /***/
-           if(!rotas.count(reta) || rotas[reta] < r){
-               rotas[reta] = r;
-           }
+			pair<map<Reta, long int>::iterator, bool> ret = rotas.insert( pair<Reta, long int>( reta, r));
+			if (!ret.second && ret.first->second < r) {
+				ret.first->second = r;
+			}
+//            if(!rotas.count(reta) || rotas[reta] < r){
+//                rotas[reta] = r;
+//            }
         }
     }
     
@@ -148,12 +153,12 @@ int main(){
     /***/
     
     /*saida*/
-    saida = 0;
+    saida = 0.;
     /*
     cout << setprecision(9) << " saida: 0" << endl;
     */
     for(auto a : rotas){
-        saida += double(sqrt(a.second));
+        saida += sqrt( (double) a.second);
         /*
         cout << "+ " << double(sqrt(a.second)) << " = " << saida << endl;
         */
