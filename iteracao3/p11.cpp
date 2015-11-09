@@ -13,7 +13,7 @@
 #define TESTE_NIVEL_1 0
 #define MAX 100
 #define PI 3.141592653589793
-#define EPSILON 0.000000001
+#define EPSILON 1e-9
 using namespace std;
 
 /*Classe ponto*/
@@ -239,8 +239,8 @@ int main(){
                                     pow(cidades[k].y - c1.y , 2.0);
                         double r2 = pow(cidades[k].x - c2.x , 2.0) + 
                                     pow(cidades[k].y - c2.y , 2.0);
-                        if(r1 <= bomb_r*bomb_r) maxc1++;
-                        if(r2 <= bomb_r*bomb_r) maxc2++;
+                        if(r1 - bomb_r*bomb_r < EPSILON) maxc1++;
+                        if(r2 - bomb_r*bomb_r < EPSILON) maxc2++;
                     }
                     if(maxc1 > max) max = maxc1;
                     if(maxc2 > max) max = maxc2;
