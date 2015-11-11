@@ -10,7 +10,7 @@
 
 #include<bits/stdc++.h>
 
-#define TESTE_NIVEL_1 1
+#define TESTE_NIVEL_1 0
 #define MAX 4000
 #define EPSILON 1e-9 
 using namespace std;
@@ -64,8 +64,9 @@ bool lessP(const Ponto& p1, const Ponto& p2, const Ponto& p3){
     if(det == 0){
         if(p1.x == p2.x)
             return p2.y < p3.y;
-        else if( ((p1.y - p2.y)/(p1.x - p2.x)) < -1 )
+        else
             return p2.x < p3.x;
+
     }
     return det > 0;
 }
