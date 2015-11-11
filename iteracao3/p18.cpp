@@ -50,7 +50,39 @@ bool esquerda(const Ponto& p1, const Ponto& p2, const Ponto pAvaliado){
           
 }
 
+bool lessP(const Ponto& p1, const Ponto& p2, const Ponto& p3){
+    double det = (p1.x*p2.y + p1.y*p3.x + p2.x*p3.y) -
+                 (p1.x*p3.y + p1.y*p2.x + p2.y*p3.x);
+    /***/
+    if(TESTE_NIVEL_1){
+        cout << "COLINEAR: Entrou com postos p1 = (" << p1.x << ","
+            << p1.y << ") , (" << p2.x << "," << p2.y << ") , ("
+            << p3.x << "," << p3.y << ")" << endl;
+        cout << "Vai retornar " << det << endl;
+    }
+    /***/
+    if(det == 0){
+        return p2.x < p3.x;
+    }
+    return det > 0;
+}
+
+bool colinear(const Ponto& p1, const Ponto& p2, const Ponto& p3){
+    double det = (p1.x*p2.y + p1.y*p3.x + p2.x*p3.y) -
+                 (p1.x*p3.y + p1.y*p2.x + p2.y*p3.x);
+    /***/
+    if(TESTE_NIVEL_1){
+        cout << "COLINEAR: Entrou com postos p1 = (" << p1.x << ","
+            << p1.y << ") , (" << p2.x << "," << p2.y << ") , ("
+            << p3.x << "," << p3.y << ")" << endl;
+        cout << "Vai retornar " << det << endl;
+    }
+    /***/
+    return det == 0;
+}
+
 /*achaFechoConvexo*/
+
 int proximoIndice(int atual){
     int prox = atual + 1;
     while(used[prox]){
@@ -63,14 +95,52 @@ int proximoIndice(int atual){
 }
 
 bool achaFechoConvexo(){
-    vector<Ponto> pilha;
+    vector<int> pilha;
     int atual;
     atual = 0;
-    if(used[0] || (atual = proximoIndice(0)) != -1){
+    if(!used[0] || (atual = proximoIndice(0)) != -1){
         pilha.push_back(atual);
+        used[atual] = true;
         if((atual = proximoIndice(atual)) != -1){
             pilha.push_back(atual);
+            used[atual] = true;
+            while((atual = proximoIndice(atual)) != -1){
+                while( pilha.size() >= 2 &&
+                       esquerda(
+                         pontos[pilha.back()],
+                         pontos[pilha[pilha.size() - 2]],
+                         pontos[atual])
+                     ){
+                    used[pilha.back()] = false;
+                    pilha.pop_back();
+                }
+                pilha.push_back(atual);
+                used[atual] = true;
+            }
+            /***/
+            if(TESTE_NIVEL_1){
+                for(auto a : pilha){
+                    cout << "ACHAFECHO - PILHA: (" << pontos[a].x 
+                         << "," << pontos[a].y << ")" << endl;
+                }
+            }
+            /***/
 
+            if(pilha.size() > 2){
+                vector<int>::size_type size = pilha.size();
+                for(unsigned i = 0; i < size; i++){
+                    for(unsigned j = i + 1; j < size; j++){
+                       for(unsigned k = j + 1; k < size; k++){
+                           if(!colinear(pontos[pilha[i]],
+                                      pontos[pilha[j]],
+                                     pontos[pilha[k]])){
+                                  return true;
+                          }
+                       }
+                    }
+                }
+            }
+        }
     }
 
     return false;
@@ -96,7 +166,7 @@ int intercalaG(int l, int m, int r){
             pontos[i] = aux[q];
             q++;
         }
-        else if(q > r || esquerda(pontos[0], aux[p] ,aux[q])){
+        else if(q > r || lessP(pontos[0], aux[p] ,aux[q])){
             pontos[i] = aux[p];
             p++;
         }
@@ -141,7 +211,7 @@ int main(){
             minIndex = i;
         used[i] = false;
     }
-    used[MAX] = false;
+    used[n] = false;
     /***/
     if(TESTE_NIVEL_1){
         for(int i = 0; i < n; i++){
@@ -171,6 +241,12 @@ int main(){
     /***/
     achados = 0;
     while(achaFechoConvexo()){
+        /***/
+        if(TESTE_NIVEL_1){
+            cout << "achou um ponto" << endl;
+            cout << "______________________________________________" << endl;
+        }
+        /***/
         achados++;
     }
 
