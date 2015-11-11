@@ -10,7 +10,7 @@
 
 #include<bits/stdc++.h>
 
-#define TESTE_NIVEL_1 0
+#define TESTE_NIVEL_1 1
 #define MAX 4000
 #define EPSILON 1e-9 
 using namespace std;
@@ -32,7 +32,7 @@ struct Ponto{
 
 /*Globais*/
 Ponto pontos[MAX];
-bool used[MAX + 1];
+vector <bool> used(MAX + 1);
 int n;
 
 /*esquerda*/
@@ -55,14 +55,17 @@ bool lessP(const Ponto& p1, const Ponto& p2, const Ponto& p3){
                  (p1.x*p3.y + p1.y*p2.x + p2.y*p3.x);
     /***/
     if(TESTE_NIVEL_1){
-        cout << "COLINEAR: Entrou com postos p1 = (" << p1.x << ","
+        cout << "LESSP: Entrou com postos p1 = (" << p1.x << ","
             << p1.y << ") , (" << p2.x << "," << p2.y << ") , ("
-            << p3.x << "," << p3.y << ")" << endl;
-        cout << "Vai retornar " << det << endl;
+            << p3.x << "," << p3.y << ")" << " e Vai retornar "
+            << det << endl;
     }
     /***/
     if(det == 0){
-        return p2.x < p3.x;
+        if(p1.x == p2.x)
+            return p2.y < p3.y;
+        else if( ((p1.y - p2.y)/(p1.x - p2.x)) < -1 )
+            return p2.x < p3.x;
     }
     return det > 0;
 }
@@ -74,8 +77,8 @@ bool colinear(const Ponto& p1, const Ponto& p2, const Ponto& p3){
     if(TESTE_NIVEL_1){
         cout << "COLINEAR: Entrou com postos p1 = (" << p1.x << ","
             << p1.y << ") , (" << p2.x << "," << p2.y << ") , ("
-            << p3.x << "," << p3.y << ")" << endl;
-        cout << "Vai retornar " << det << endl;
+            << p3.x << "," << p3.y << ")" << " e Vai retornar "
+            << det << endl;
     }
     /***/
     return det == 0;
@@ -199,7 +202,8 @@ int main(){
     int minIndex;
     double x, y;
     Ponto aux;
-    int achados;
+    Ponto temp[MAX];
+    int achados, count;
 
     /*Entrada*/
     cin >> n;
@@ -207,7 +211,9 @@ int main(){
     for(int i = 0; i < n; i++){
         cin >> x >> y;
         pontos[i] = make_pair(x,y);
-        if(y < pontos[minIndex].y)
+        if( y < pontos[minIndex].y ||
+            (y == pontos[minIndex].y && x > pontos[minIndex].x)
+          )
             minIndex = i;
         used[i] = false;
     }
@@ -241,13 +247,54 @@ int main(){
     /***/
     achados = 0;
     while(achaFechoConvexo()){
+        achados++;
+        count = 0;
+        for(int i = 0; i < n; i++){
+            if(!used[i]){
+                temp[count++] = pontos[i];
+            }
+            else{
+                /***/
+                if(TESTE_NIVEL_1){
+                    cout << " Retirando ponto (" << pontos[i].x
+                         << "," << pontos[i].y << ")" << endl;
+                }
+                /***/
+            }
+        }
         /***/
         if(TESTE_NIVEL_1){
-            cout << "achou um ponto" << endl;
+            cout << "achou um poligono => total = " << achados << endl;
             cout << "______________________________________________" << endl;
         }
         /***/
-        achados++;
+        minIndex = 0;
+        for(int i = 0; i < count; i++){
+            pontos[i] = temp[i];
+            used[i] = false;
+            if( y < pontos[minIndex].y ||
+                (y == pontos[minIndex].y && x > pontos[minIndex].x)
+            )
+                minIndex = i;
+            
+        }
+        aux = pontos[0];
+        pontos[0] = pontos[minIndex];
+        pontos[minIndex] = aux;
+
+        n = count;
+        used[n] = false;
+        mergeSortG(1, n - 1);
+        /***/
+        if(TESTE_NIVEL_1){
+            cout << "DEPOIS DE REORDENAR" << endl;
+            for(int i = 0; i < n; i++){
+                cout << "MAIN (PONTOS): " << i << " = ("
+                     << pontos[i].x << "," << pontos[i].y
+                     << ")" << endl;
+            }
+        }
+        /***/
     }
 
     /*Saida*/
