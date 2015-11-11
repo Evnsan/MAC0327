@@ -11,6 +11,7 @@
 #include<bits/stdc++.h>
 
 #define TESTE_NIVEL_1 0
+#define TESTE_NIVEL_2 0
 #define MAX 4000
 #define EPSILON 1e-9 
 using namespace std;
@@ -40,8 +41,8 @@ bool esquerda(const Ponto& p1, const Ponto& p2, const Ponto pAvaliado){
     double det = (p1.x*p2.y + p1.y*pAvaliado.x + p2.x*pAvaliado.y) -
                  (p1.x*pAvaliado.y + p1.y*p2.x + p2.y*pAvaliado.x);
     /***/
-    if(TESTE_NIVEL_1){
-        cout << "ESQUERDA: Entrou com postos p1 = (" << p1.x << ","
+    if(TESTE_NIVEL_2){
+        cout << "ESQUERDA: Entrou com pontos p1 = (" << p1.x << ","
             << p1.y << ") , (" << p2.x << "," << p2.y << ") , ("
             << pAvaliado.x << "," << pAvaliado.y << ")" << endl;
     }
@@ -54,8 +55,8 @@ bool lessP(const Ponto& p1, const Ponto& p2, const Ponto& p3){
     double det = (p1.x*p2.y + p1.y*p3.x + p2.x*p3.y) -
                  (p1.x*p3.y + p1.y*p2.x + p2.y*p3.x);
     /***/
-    if(TESTE_NIVEL_1){
-        cout << "LESSP: Entrou com postos p1 = (" << p1.x << ","
+    if(TESTE_NIVEL_2){
+        cout << "LESSP: Entrou com pontos p1 = (" << p1.x << ","
             << p1.y << ") , (" << p2.x << "," << p2.y << ") , ("
             << p3.x << "," << p3.y << ")" << " e Vai retornar "
             << det << endl;
@@ -75,8 +76,8 @@ bool colinear(const Ponto& p1, const Ponto& p2, const Ponto& p3){
     double det = (p1.x*p2.y + p1.y*p3.x + p2.x*p3.y) -
                  (p1.x*p3.y + p1.y*p2.x + p2.y*p3.x);
     /***/
-    if(TESTE_NIVEL_1){
-        cout << "COLINEAR: Entrou com postos p1 = (" << p1.x << ","
+    if(TESTE_NIVEL_2){
+        cout << "COLINEAR: Entrou com pontos p1 = (" << p1.x << ","
             << p1.y << ") , (" << p2.x << "," << p2.y << ") , ("
             << p3.x << "," << p3.y << ")" << " e Vai retornar "
             << det << endl;
@@ -122,7 +123,7 @@ bool achaFechoConvexo(){
                 used[atual] = true;
             }
             /***/
-            if(TESTE_NIVEL_1){
+            if(TESTE_NIVEL_2){
                 for(auto a : pilha){
                     cout << "ACHAFECHO - PILHA: (" << pontos[a].x 
                          << "," << pontos[a].y << ")" << endl;
@@ -155,7 +156,7 @@ int intercalaG(int l, int m, int r){
     Ponto aux[MAX];
     int p, q;
     /***/
-    if(TESTE_NIVEL_1){
+    if(TESTE_NIVEL_2){
         cout << "INTERCALA: entrou com l= " << l
              << " m= " << m << " e r = " << r << endl;
     }
@@ -185,7 +186,7 @@ int intercalaG(int l, int m, int r){
 int mergeSortG(int l, int r){
     int m = (l + r)/2;
     /***/
-    if(TESTE_NIVEL_1){
+    if(TESTE_NIVEL_2){
         cout << "MERGESORTG: entrou com l= " << l
              << " e r = " << r << endl;
     }
@@ -205,6 +206,7 @@ int main(){
     Ponto aux;
     Ponto temp[MAX];
     int achados, count;
+    int inicio;
 
     /*Entrada*/
     cin >> n;
@@ -235,6 +237,30 @@ int main(){
 
     /*sort*/
     mergeSortG(1, n - 1);
+    /***/
+    if(TESTE_NIVEL_1){
+        cout << "PARCIALMENTE ORDENADO" << endl;
+        for(int i = 0; i < n; i++){
+            cout << "MAIN (PONTOS): " << i << " = ("
+                 << pontos[i].x << "," << pontos[i].y
+                 << ")" << endl;
+        }
+    }
+    /***/
+        
+    if(pontos[0].x < pontos[n-1].x){
+        inicio = n-2;
+        while(colinear(pontos[0], pontos[n-1], pontos[inicio])){
+            inicio--;
+        }
+        inicio++;
+        for(int i = inicio; i < n; i++){
+            temp[i] = pontos[i];
+        }
+        for(int i = inicio; i < n; i++){
+            pontos[i] = temp[n + inicio - i - 1];
+        }
+    }
     
     /***/
     if(TESTE_NIVEL_1){
@@ -286,6 +312,20 @@ int main(){
         n = count;
         used[n] = false;
         mergeSortG(1, n - 1);
+        if(pontos[0].x < pontos[n-1].x){
+            inicio = n-2;
+            while(colinear(pontos[0], pontos[n-1], pontos[inicio])){
+                inicio--;
+            }
+            inicio++;
+            for(int i = inicio; i < n; i++){
+                temp[i] = pontos[i];
+            }
+            for(int i = inicio; i < n; i++){
+                pontos[i] = temp[n + inicio - i - 1];
+            }
+        }
+
         /***/
         if(TESTE_NIVEL_1){
             cout << "DEPOIS DE REORDENAR" << endl;
@@ -300,7 +340,6 @@ int main(){
 
     /*Saida*/
     cout << achados << endl;
-
 
     return 0;
 }
