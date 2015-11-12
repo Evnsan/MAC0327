@@ -96,6 +96,40 @@ bool colinear(const Ponto& p1, const Ponto& p2, const Ponto& p3){
     /***/
     return (det > -EPSILON && det < EPSILON);
 }
+
+bool concertaOrdem(){
+    Ponto temp[MAX];
+    int inicio;
+    int fim;
+    
+    if(pontos[0].x < pontos[n-1].x){
+        inicio = n-2;
+        while(colinear(pontos[0], pontos[n-1], pontos[inicio])){
+            inicio--;
+        }
+        inicio++;
+        for(int i = inicio; i < n; i++){
+            temp[i] = pontos[i];
+        }
+        for(int i = inicio; i < n; i++){
+            pontos[i] = temp[n + inicio - i - 1];
+        }
+    }
+    else if(pontos[0].x > pontos[1].x){
+        fim = 2;
+        while(colinear(pontos[0], pontos[1], pontos[fim])){
+            fim++;
+        }
+        for(int i = 1; i < fim; i++){
+            temp[i] = pontos[i];
+        }
+        for(int i = 1; i < fim; i++){
+            pontos[i] = temp[fim - i];
+        }
+    }
+    return 0;
+}
+
 /*****************************************************************************/
 
 /**********************************Graham*************************************/
@@ -261,21 +295,7 @@ int main(){
         }
     }
     /***/
-        
-    if(pontos[0].x < pontos[n-1].x){
-        inicio = n-2;
-        while(colinear(pontos[0], pontos[n-1], pontos[inicio])){
-            inicio--;
-        }
-        inicio++;
-        for(int i = inicio; i < n; i++){
-            temp[i] = pontos[i];
-        }
-        for(int i = inicio; i < n; i++){
-            pontos[i] = temp[n + inicio - i - 1];
-        }
-    }
-    
+    concertaOrdem(); 
     /***/
     if(TESTE_NIVEL_1){
         cout << "DEPOIS DE ORDENADO" << endl;
@@ -326,20 +346,7 @@ int main(){
         n = count;
         used[n] = false;
         mergeSortG(1, n - 1);
-        if(pontos[0].x < pontos[n-1].x){
-            inicio = n-2;
-            while(colinear(pontos[0], pontos[n-1], pontos[inicio])){
-                inicio--;
-            }
-            inicio++;
-            for(int i = inicio; i < n; i++){
-                temp[i] = pontos[i];
-            }
-            for(int i = inicio; i < n; i++){
-                pontos[i] = temp[n + inicio - i - 1];
-            }
-        }
-
+        concertaOrdem();
         /***/
         if(TESTE_NIVEL_1){
             if(n > 0){
