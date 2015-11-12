@@ -13,13 +13,12 @@
 #define TESTE_NIVEL_1 0
 #define TESTE_NIVEL_2 0
 #define MAX 4000
-#define EPSILON 1e-15 
+#define EPSILON 1e-9 
 using namespace std;
 
-/********************************Classe Ponto*********************************/
+/*Classe ponto*/
 struct Ponto{
-    int x = 0, y = 0;
-
+    double x = 0, y = 0;
     struct Ponto& operator = (const pair<int, int>& p){
         x = p.first;
         y = p.second;
@@ -31,61 +30,51 @@ struct Ponto{
         return *this;
     }
 };
-/*****************************************************************************/
 
-/*****************************Variaveis Globais*******************************/
+/*Globais*/
 Ponto pontos[MAX];
 vector <bool> used(MAX + 1);
 int n;
-/*****************************************************************************/
-
-/********************************Auxiliares***********************************/
-/*calcDet*/
-double calcDet(const Ponto& p1, const Ponto& p2, const Ponto p3){
-    double det = 1.0*(p1.x*p2.y + p1.y*p3.x + p2.x*p3.y) -
-                 (p1.x*p3.y + p1.y*p2.x + p2.y*p3.x);
-    return det;
-}
 
 /*esquerda*/
 bool esquerda(const Ponto& p1, const Ponto& p2, const Ponto pAvaliado){
-    double det = calcDet(p1, p2, pAvaliado);
+    double det = (p1.x*p2.y + p1.y*pAvaliado.x + p2.x*pAvaliado.y) -
+                 (p1.x*pAvaliado.y + p1.y*p2.x + p2.y*pAvaliado.x);
     /***/
     if(TESTE_NIVEL_2){
         cout << "ESQUERDA: Entrou com pontos p1 = (" << p1.x << ","
             << p1.y << ") , (" << p2.x << "," << p2.y << ") , ("
             << pAvaliado.x << "," << pAvaliado.y << ")" << endl;
-        cout << "ESQUERDA: recebeu det = " << det << " e -EPSILON = "
-             << -EPSILON << " comparacao com epsilon " << (det > EPSILON)
-             << endl;
     }
     /***/
-   return det > EPSILON; 
+   return det > 0; 
           
 }
 
-bool lessP(const Ponto& pReferencia, const Ponto& p2, const Ponto& p3){
-    double det = calcDet(pReferencia, p2, p3);
+bool lessP(const Ponto& p1, const Ponto& p2, const Ponto& p3){
+    double det = (p1.x*p2.y + p1.y*p3.x + p2.x*p3.y) -
+                 (p1.x*p3.y + p1.y*p2.x + p2.y*p3.x);
     /***/
     if(TESTE_NIVEL_2){
-        cout << "LESSP: Entrou com pontos p1 = (" << pReferencia.x << ","
-            << pReferencia.y << ") , (" << p2.x << "," << p2.y << ") , ("
+        cout << "LESSP: Entrou com pontos p1 = (" << p1.x << ","
+            << p1.y << ") , (" << p2.x << "," << p2.y << ") , ("
             << p3.x << "," << p3.y << ")" << " e Vai retornar "
             << det << endl;
     }
     /***/
     if(det == 0){
-        if(pReferencia.x == p2.x)
+        if(p1.x == p2.x)
             return p2.y < p3.y;
         else
             return p2.x < p3.x;
 
     }
-    return det > EPSILON;
+    return det > 0;
 }
 
 bool colinear(const Ponto& p1, const Ponto& p2, const Ponto& p3){
-    double det = calcDet(p1, p2, p3);
+    double det = (p1.x*p2.y + p1.y*p3.x + p2.x*p3.y) -
+                 (p1.x*p3.y + p1.y*p2.x + p2.y*p3.x);
     /***/
     if(TESTE_NIVEL_2){
         cout << "COLINEAR: Entrou com pontos p1 = (" << p1.x << ","
@@ -94,11 +83,9 @@ bool colinear(const Ponto& p1, const Ponto& p2, const Ponto& p3){
             << det << endl;
     }
     /***/
-    return (det > -EPSILON && det < EPSILON);
+    return det == 0;
 }
-/*****************************************************************************/
 
-/**********************************Graham*************************************/
 /*achaFechoConvexo*/
 
 int proximoIndice(int atual){
@@ -145,14 +132,17 @@ bool achaFechoConvexo(){
             /***/
 
             if(pilha.size() > 2){
-                /*Podemos avaliar se os pontos formam um poligono, nao sao
-                  colineares, olhando apenas para o primeiro e o ultimo pontos
-                  pois escolhemos como ponto de referencia(ponto[0]) o ponto
-                  com menor y, desempatando pelo maior x*/ 
-                if(!colinear(pontos[pilha[0]],
-                             pontos[pilha[1]],
-                             pontos[pilha[pilha.size() - 1]])){
-                    return true;
+                vector<int>::size_type size = pilha.size();
+                for(unsigned i = 0; i < size; i++){
+                    for(unsigned j = i + 1; j < size; j++){
+                       for(unsigned k = j + 1; k < size; k++){
+                           if(!colinear(pontos[pilha[i]],
+                                      pontos[pilha[j]],
+                                     pontos[pilha[k]])){
+                                  return true;
+                          }
+                       }
+                    }
                 }
             }
         }
@@ -208,14 +198,11 @@ int mergeSortG(int l, int r){
     }
     return 0;
 }
-/*****************************************************************************/
-
-
 
 /***main***/
 int main(){
     int minIndex;
-    int x, y;
+    double x, y;
     Ponto aux;
     Ponto temp[MAX];
     int achados, count;
@@ -224,7 +211,6 @@ int main(){
     /*Entrada*/
     cin >> n;
     minIndex = 0;
-    /*Preprocessamento*/
     for(int i = 0; i < n; i++){
         cin >> x >> y;
         pontos[i] = make_pair(x,y);
@@ -342,13 +328,11 @@ int main(){
 
         /***/
         if(TESTE_NIVEL_1){
-            if(n > 0){
-                cout << "DEPOIS DE REORDENAR" << endl;
-                for(int i = 0; i < n; i++){
-                    cout << "MAIN (PONTOS): " << i << " = ("
-                         << pontos[i].x << "," << pontos[i].y
-                         << ")" << endl;
-                }
+            cout << "DEPOIS DE REORDENAR" << endl;
+            for(int i = 0; i < n; i++){
+                cout << "MAIN (PONTOS): " << i << " = ("
+                     << pontos[i].x << "," << pontos[i].y
+                     << ")" << endl;
             }
         }
         /***/

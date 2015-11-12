@@ -10,10 +10,10 @@
 
 #include<bits/stdc++.h>
 
-#define TESTE_NIVEL_1 1
+#define TESTE_NIVEL_1 0
 #define INF 2001
 #define PI 3.141592653589793
-#define EPSILON 1e-9
+#define EPSILON 1e-10
 using namespace std;
 
 /*Classe ponto*/
@@ -169,19 +169,51 @@ pair<Ponto, Ponto> achaPonto(Ponto a, Ponto b, Ponto c){
     }
     /***/
     delta = perimetro*perimetro - 8*ab*ac;
+    if(abs(delta) <= EPSILON) delta = 0;
     if(delta >= 0){
-        aq = (-perimetro + sqrt(delta))/4;
-        if(aq > 0){
-            ap = -aq + perimetro/2.0;
+        aq = (perimetro + sqrt(delta))/4;
+        ap = (perimetro - sqrt(delta))/4;
+        if(ap > 0){
             q = b - a;
             q.setIntensidade(aq);
             q = a + q;
-            p = c - a;
-            p.setIntensidade(ap);
-            p = a + p;
+            if(a.len(q) < a.len(b) + EPSILON){
+                p = c - a;
+                p.setIntensidade(ap);
+                p = a + p;
+                if(a.len(p) < a.len(c) +  EPSILON){
+                    return make_pair(p,q);
+                }
+            }
+            else{
+                q = c - a;
+                q.setIntensidade(aq);
+                q = a + q;
+                if(a.len(q) < a.len(b) + EPSILON){
+                    p = b - a;
+                    p.setIntensidade(ap);
+                    p = a + p;
+                    if(a.len(p) < a.len(b) + EPSILON){
+                       return make_pair(p,q);
+                    }
+                }
+            }
+        }
+        else{
+            /***/
+            if(TESTE_NIVEL_1){
+                cout << "ACHAPONTO: ap negativo!" << endl;
+            }
+            /***/
         }
     }
-    cout << "ACHAPONTO: aq negativo!" << endl;
+    else{
+        /***/
+        if(TESTE_NIVEL_1){
+            cout << "ACHAPONTO: delta negativo!" << endl;
+        }
+        /***/
+    }
     return make_pair(inf, inf);
 }
 
@@ -210,16 +242,21 @@ int main(){
     /***/
 
     /*Processamento*/
-    cout << setprecision(11);
+    cout << setprecision(20);
    
     resposta = achaPonto(a, b, c);
     if(resposta.first.x == INF){
         resposta = achaPonto(b,c,a);
-    }
-    if(resposta.first.x == INF){
-        resposta = achaPonto(c,b,a);
+        if(resposta.first.x == INF){
+            resposta = achaPonto(c,b,a);
+        }
+        else{
+            cout << "NO" << endl;
+        }
     }
     /*Saida*/ 
     cout << "YES" << endl;
+    cout << resposta.first.x << " " << resposta.first.y << endl;
+    cout << resposta.second.x << " " << resposta.second.y << endl;
     return 0;
 }
