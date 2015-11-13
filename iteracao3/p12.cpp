@@ -20,6 +20,7 @@
 using namespace std;
 
 /***GLOBAIS***/
+int mTam;
 int Ma[MAXN];        /*Par do vertice i do A*/
 int Mb[MAXN];        /*Par do vertice j do B*/
 int n;               /*n = |A| = |B| = |V|/2*/
@@ -27,30 +28,11 @@ int w[MAXN][MAXN];   /*peso*/
 bool visA[MAXN];     /*v E A visitado*/
 bool visB[MAXN];     /*v E B visitado*/
 
-/***Metodo Hungaro***/
-int temAumento(int i){
-    int delta = INF;
-    
-    /*para cada vizinho j E B de i*/
-    for(int j = 0; j < n; j++){
-        /*que nao foi vizitado*/
-        if(!visB[j]){
-            if(y[i] + z[j] == w[i][j] || temAumento(Mb[j]) == INF){
-                Ma[i] = j;
-                Mb[j] = i;
-                return INF;
-            }
-            else if(y[i] + z[j] - w[i][j] < delta){
-                delta = y[i] +z[j] - w[i][j];
-            }
-        }
-    }
-    
-    return delta;
-}
+/***Metodo Hungaro - peso máximo**/
 
 /*inicializacao*/
 int inicializaHungaro(){
+    mTam = 0;
     for(int i = 0; i < n; i++){
         Ma[i] = VAZIO;
         Mb[i] = VAZIO;
@@ -70,15 +52,39 @@ int inicializaHungaro(){
 
 /*Emparelhamento perfeito?*/
 bool perfeitoHungaro(){
-    return false;
+    return mTam == n;
 }
 
 /*vertice é livre?*/
 bool livreA(int i){
     return Ma[i] == VAZIO;
 }
-
-/*MetodoHungaro - peso máximo*/
+/*temAumento*/
+int temAumento(int i){
+    int delta = INF;
+   
+    visA[i] = true;
+    /*para cada vizinho j E B de i*/
+    for(int j = 0; j < n; j++){
+        /*que nao foi vizitado*/
+        if(!visB[j]){
+            visB[j] = true;
+            if(y[i] + z[j] == w[i][j]){
+                if(livreB(j) || temAumento(Mb[j]) == INF){
+                    Ma[i] = j;
+                    Mb[j] = i;
+                    return INF;
+                }
+            }
+            else if(y[i] + z[j] - w[i][j] < delta){
+                delta = y[i] +z[j] - w[i][j];
+            }
+        }
+    }
+    
+    return delta;
+}
+/*principal*/ 
 int hungaroN4(){
     int delta;
 
@@ -97,6 +103,10 @@ int hungaroN4(){
                         }
                     }
                 }
+                else{
+                    mTam++;
+                }
+                /*limpar visB e visA*/
             }
         }
     }
