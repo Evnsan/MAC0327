@@ -10,7 +10,7 @@
 
 #include<bits/stdc++.h>
 
-#define TESTE_NIVEL_1 1
+#define TESTE_NIVEL_1 0
 #define MAXN 150
 #define MAXC 100
 #define INF 15001
@@ -21,12 +21,14 @@ using namespace std;
 
 /***GLOBAIS***/
 int mTam;
-int Ma[MAXN];        /*Par do vertice i do A*/
-int Mb[MAXN];        /*Par do vertice j do B*/
-int n;               /*n = |A| = |B| = |V|/2*/
-int w[MAXN][MAXN];   /*peso*/
-bool visA[MAXN];     /*v E A visitado*/
-bool visB[MAXN];     /*v E B visitado*/
+int Ma[MAXN];      /*Par do vertice i do A*/
+int Mb[MAXN];      /*Par do vertice j do B*/
+int y[MAXN];       /*Variavel dual - max(w(ij)) - ajustes*/
+int z[MAXN];       /*Variavel dual - ajustes - adicionam arestas a avaliacao*/
+int n;             /*n = |A| = |B| = |V|/2*/
+int w[MAXN][MAXN]; /*peso*/
+bool visA[MAXN];   /*v E A visitado*/
+bool visB[MAXN];   /*v E B visitado*/
 
 /***Metodo Hungaro - peso máximo**/
 
@@ -59,21 +61,45 @@ bool perfeitoHungaro(){
 bool livreA(int i){
     return Ma[i] == VAZIO;
 }
+bool livreB(int i){
+    return Mb[i] == VAZIO;
+}
+
+/*Limpar vetor Visitados*/
+int limpaVis(){
+    for(int i = 0; i < n; i++){
+        visA[i] = visB[i] = false;
+    }
+    return 0;
+}
+
 /*temAumento*/
 int temAumento(int i){
     int delta = INF;
-   
+    int deltaRet = INF;
+    
     visA[i] = true;
     /*para cada vizinho j E B de i*/
     for(int j = 0; j < n; j++){
         /*que nao foi vizitado*/
         if(!visB[j]){
-            visB[j] = true;
             if(y[i] + z[j] == w[i][j]){
-                if(livreB(j) || temAumento(Mb[j]) == INF){
+                if(livreB(j)){
                     Ma[i] = j;
                     Mb[j] = i;
                     return INF;
+                }
+                else{
+                    visB[j] = true;
+                    deltaRet = temAumento(Mb[j]);
+                    if(deltaRet == INF){
+                        Ma[i] = j;
+                        Mb[j] = i;
+                        return INF;
+                    }
+                    else if(deltaRet < delta){
+                        delta = deltaRet;
+                    }
                 }
             }
             else if(y[i] + z[j] - w[i][j] < delta){
@@ -89,7 +115,7 @@ int hungaroN4(){
     int delta;
 
     inicializaHungaro();
-    while(!perfeitoHungaro){
+    while(!perfeitoHungaro()){
         for(int i = 0; i < n; i++){
             if(livreA(i)){
                 delta = temAumento(i);
@@ -106,7 +132,7 @@ int hungaroN4(){
                 else{
                     mTam++;
                 }
-                /*limpar visB e visA*/
+                limpaVis(); 
             }
         }
     }
@@ -116,6 +142,7 @@ int hungaroN4(){
 
 
 int main(){
+    int soma = 0;
     
     /*Entrada*/
     cin >> n;
@@ -136,5 +163,18 @@ int main(){
     /***/
 
     /*Processamento*/
+    hungaroN4();
+    soma = 0;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(Ma[i] != j){
+                soma += w[i][j];
+            }
+        }
+    }
+
+    /*Saida*/
+    cout << soma << endl;
+
     return 0;
 }
