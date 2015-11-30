@@ -37,6 +37,7 @@ using namespace std;
 int main(){
     Reta r[4];
     long int x, y;
+    int xpar, ypar;
 
     /*Entrada*/
     for(int i = 0; i < 4; i++){
@@ -62,7 +63,19 @@ int main(){
         }
     }
     /***/
-
     /*Processamento*/
+    /*verificar se existem 2 retas paralelas a x e duas a y*/
+    ypar = xpar = 0;
+    for(int i = 0; i < 4; i++){
+        if(r[i].paralelo == 'x'){
+            xpar += 1;
+        }
+        else if( r[i].paralelo == 'y'){
+            ypar += 1;
+        }
+    }
+    /*verificar se é quadrilatero*/
+
+
     return 0;
 }
