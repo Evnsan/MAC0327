@@ -1,0 +1,67 @@
+/***********************************/
+/*MAC0327 - Desafios de Programacao*/
+/***********************************/
+/***Evandro Augusto Nunes Sanches***/
+/***********************************/
+/******Cows and Primitive Roots*****/
+/***********************************/
+/*************Problema 34***********/
+/***********************************/
+
+#include<bits/stdc++.h>
+
+#define TESTE_NIVEL_1 0
+#define MAX 2000 
+
+using namespace std;
+
+/*main*/
+int main(){
+    int n;
+    int saida;
+    bool dividiuAntes;
+    long int valorAtual;
+
+    /*Entrada*/
+    cin >> n;
+
+    /***/
+    if(TESTE_NIVEL_1){
+        cout << "MAIN : " << n << endl;
+    }
+    /***/
+    saida = 0;
+    valorAtual = 1;
+    /*Processamento*/
+    for(int i = 2; i <= n; i++){
+        dividiuAntes = false;
+        for(int j = 1; j <= n - 2 && !dividiuAntes; j++){
+            valorAtual *= i;
+            if((valorAtual - 1) % n == 0){
+                dividiuAntes = true;
+            }
+            /***/
+            if(TESTE_NIVEL_1){
+                cout << "MAIN : " << i << "^" << j
+                     << "= " << valorAtual << endl;
+                cout << "MAIN : valorAtual =  " << valorAtual << endl;
+                cout << "MAIN : dividiuAntes =  " << dividiuAntes << endl;
+            }
+            /***/
+        }
+        valorAtual *= i;
+        /***/
+        if(TESTE_NIVEL_1){
+            cout << "MAIN : valorAtual =  " << valorAtual << endl;
+            cout << "MAIN : dividiuAntes =  " << dividiuAntes << endl;
+        }
+        /***/
+        if(!dividiuAntes && (valorAtual - 1) % n == 0){
+            saida += 1;
+        }
+    }
+
+    /*Saida*/
+    cout << saida << endl;
+    return 0;
+}
