@@ -3,7 +3,7 @@
 /***********************************/
 /***Evandro Augusto Nunes Sanches***/
 /***********************************/
-/*********Young Photographer********/
+/***************Letter**************/
 /***********************************/
 /*************Problema 24***********/
 /***********************************/
@@ -11,88 +11,61 @@
 #include<bits/stdc++.h>
 
 #define TESTE_NIVEL_1 0
-#define MAX 1001 
+#define MAX 50 
 
 
 using namespace std;
 
 int main(){
-    int n, inicio, fim, x0;
-    int pista[MAX];
-    int max, min;
-    int distAntes, distDepois;
-    int tmp;
+    char vetor[MAX][MAX];
+    int n, m;
+    char saida[MAX][MAX];
+    int dir, esq, cima, baixo;
+    
 
     /*Entrada e Processamento*/
-    cin >> n >> x0;
-
-    /*inicializacao da pista*/ 
-    for(int i = 0; i < MAX; i++){
-        pista[i] = 0;
-    }
-    max = 0;
-    min = MAX;
+    cin >> n >> m;
+    cima = n - 1;
+    esq = m - 1;
+    dir = baixo = 0;
     for(int i = 0; i < n; i++){
-        cin >> inicio >> fim;
-        if(fim < inicio){
-            tmp = inicio;
-            inicio = fim;
-            fim = tmp;
-        }
-        if(inicio < min) min = inicio;
-        if(fim > max) max = fim;
-        for(int j = inicio; j <= fim; j++){
-            pista[j] += 1;
+        for(int j = 0; j < m; j++){
+            cin >> vetor[i][j];
+            if ( vetor[i][j] == '*'){
+                if(i < cima){
+                    cima = i;
+                }
+                if(i > baixo){
+                    baixo = i;
+                }
+                if(j < esq){
+                    esq = j;
+                }
+                if(j > dir){
+                    dir = j;
+                }
+            }
         }
     }
     /***/
     if(TESTE_NIVEL_1){
-        cout << "MAIN : pista " << min << "-" << max << endl;
-        for(int i = min; i <= max; i++){
-            cout << pista[i] << " ";
+        cout << "MAIN : entrada " << n << "x" << m << endl;
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                cout << vetor[i][j];
+            }
+            cout << endl;
         }
-        cout << endl;
     }
     /***/
 
-    /*Processamento*/
-    distAntes = MAX + 1;
-    distDepois = MAX + 1;
-    for(int i = min; i <= x0; i++){
-            if(pista[i] == n){
-                distAntes = i;
-            }
-    }
-    for(int i = max; i >= x0; i--){
-            if(pista[i] == n){
-                distDepois = i;
-            }
-    }
-    if(distAntes != MAX + 1){
-        if(distDepois != MAX + 1){
-            distAntes = x0 - distAntes;
-            distDepois = distDepois - x0;
-            if(distAntes < distDepois){
-                cout << distAntes << endl;
-            }
-            else{
-                cout << distDepois << endl;
-            }
+    /*Saida*/
+    for(int i = cima; i <= baixo; i++){
+        for( int j = esq; j <= dir; j++){
+           cout << vetor[i][j];
         }
-        else{
-            distAntes = x0 - distAntes;
-            cout << distAntes << endl;
-        }
+       cout << endl; 
     }
-    else{
-        if(distDepois != MAX + 1){
-            distDepois = distDepois - x0;
-            cout << distDepois << endl;
-        }
-        else{
-            cout << -1 << endl;
-        }
-    }
-    
+
     return 0;
 }
