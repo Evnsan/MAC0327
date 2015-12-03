@@ -22,28 +22,51 @@ int n;
 int x, y;
 
 /*Auxiliares*/
-int bfsR(vector<int> pilha, int nivel, bool vis[MAX]){
-    vector<int> novaPilha;
-    if(false /*pilha vazia*/){
-        return nivel;
+pair<int, int> dfsR(int vertice, int maxLateral, bool vis[MAX]){
+    int max1, max2;
+    pair<int, int> retorno;
+
+    max1 = 0;
+    max2 = 0;
+
+    /***/
+    if(TESTE_NIVEL_1){
+        cout << "DFSR: recebeu (" << vertice << "," << maxLateral
+             << endl;
     }
-    for(auto a : pilha){
-        for(auto cidade : adj[a]){
-            if(!vis[cidade]){
-                novaPilha.push_back(cidade);
+    /***/
+
+    /*processar*/
+    for(auto a : adj[vertice]){
+        if(!vis[a]){
+            vis[a] = true;
+            retorno = dfsR(a, maxLateral, vis);
+            if(retorno.first + 1 > max1){
+                max2 = max1;
+                max1 = retorno.first + 1;
+            }
+            else if(retorno.first  + 1> max2){
+                max2 = retorno.first + 1;
+            }
+            if(retorno.second > maxLateral){
+                maxLateral = retorno.second;
             }
         }
-        vis[a] = true;
     }
-    return bfsR(novaPilha, nivel + 1, vis);
+    if(max1 + max2 > maxLateral){
+        maxLateral = max1 + max2;
+    }
+    
+    return make_pair(max1, maxLateral);
+
 }
 
 int custo(int cidDentro, int cidFora){
-    vector<int> pilha;
+    pair <int, int> retorno;
     bool vis[MAX];
 
     for(int i = 0; i < n; i++){
-        if( i == cidDentro ){
+        if(i == cidFora || cidDentro){
             vis[i] = true;
         }
         else{
@@ -51,12 +74,14 @@ int custo(int cidDentro, int cidFora){
         }
     }
 
-    for(auto b : adj[a.first]){
-        if(b != cidFora){
-            pilha.push_back(b);
-        }
+    retorno = dfsR(cidDentro, 0, vis);
+
+    if(retorno.first > retorno.second){
+        return retorno.first;
     }
-    return bfsR(pilha, 0, vis);
+    else{
+        return retorno.second;
+    }
 }
 
 
@@ -106,7 +131,7 @@ int main(){
     }
 
     /*Saida*/
-    cout << max << andl;
+    cout << max << endl;
 
 
     return 0;
