@@ -10,7 +10,7 @@
 
 #include<bits/stdc++.h>
 
-#define TESTE_NIVEL_1 1
+#define TESTE_NIVEL_1 0
 #define TESTE_NIVEL_2 0
 #define MAX 200 
 
@@ -18,11 +18,11 @@ using namespace std;
 
 /*Globais*/
 vector <int> adj[MAX];
+bool vis[MAX];
 int n;
-int x, y;
 
 /*Auxiliares*/
-pair<int, int> dfsR(int vertice, int maxLateral, bool vis[MAX]){
+pair<int, int> dfsR(int vertice, int maxLateral){
     int max1, max2;
     pair<int, int> retorno;
 
@@ -32,7 +32,7 @@ pair<int, int> dfsR(int vertice, int maxLateral, bool vis[MAX]){
     /***/
     if(TESTE_NIVEL_1){
         cout << "DFSR: recebeu (" << vertice << "," << maxLateral
-             << endl;
+             << ")" << endl;
     }
     /***/
 
@@ -40,7 +40,7 @@ pair<int, int> dfsR(int vertice, int maxLateral, bool vis[MAX]){
     for(auto a : adj[vertice]){
         if(!vis[a]){
             vis[a] = true;
-            retorno = dfsR(a, maxLateral, vis);
+            retorno = dfsR(a, maxLateral);
             if(retorno.first + 1 > max1){
                 max2 = max1;
                 max1 = retorno.first + 1;
@@ -63,10 +63,9 @@ pair<int, int> dfsR(int vertice, int maxLateral, bool vis[MAX]){
 
 int custo(int cidDentro, int cidFora){
     pair <int, int> retorno;
-    bool vis[MAX];
 
     for(int i = 0; i < n; i++){
-        if(i == cidFora || cidDentro){
+        if(i == cidFora || i == cidDentro){
             vis[i] = true;
         }
         else{
@@ -74,7 +73,7 @@ int custo(int cidDentro, int cidFora){
         }
     }
 
-    retorno = dfsR(cidDentro, 0, vis);
+    retorno = dfsR(cidDentro, 0);
 
     if(retorno.first > retorno.second){
         return retorno.first;
@@ -91,6 +90,7 @@ int main(){
     /*componentes*/
     int comp1;
     int comp2;
+    int x, y;
     vector< pair<int, int> > arestas;
 
     /*Entrada*/
