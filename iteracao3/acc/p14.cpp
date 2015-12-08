@@ -11,6 +11,8 @@
 #include<bits/stdc++.h>
 
 #define TESTE_NIVEL_1 0
+#define TESTE_NIVEL_2 0
+#define TESTE_NIVEL_3 0
 #define MAX 100
 #define VAZIO -1
 
@@ -22,14 +24,26 @@ int Mb[MAX];
 int mTam;
 bool visA[MAX], visB[MAX];
 
-/*inicializacao*/
+/*MATCH*/
 
-int inicializa(int n){
+/*Limpar vetor Visitados*/
+int limpaVis(int n, int m){
+   if(n < m) n = m;
+   for(int i = 0; i < n; i++){
+       visA[i] = visB[i] = false;
+   }
+   return 0;
+} 
+
+/*inicializacao*/
+int inicializa(int n, int m){
     mTam = 0;
+    if(n < m) n = m;
     for(int i = 0; i < n; i++){
         Ma[i] = VAZIO;
         Mb[i] = VAZIO;
     }
+    limpaVis(n, m);
     return 0;
 }
 
@@ -41,14 +55,7 @@ bool livreB(int i){
     return Mb[i] == VAZIO;
 }
 
-/*Limpar vetor Visitados*/
-int limpaVis(int n){
-   for(int i = 0; i < n; i++){
-       visA[i] = visB[i] = false;
-   }
-   return 0;
-} 
-
+/*procura caminho aumentador*/
 bool temAumento(int a){
     /***/
     if(TESTE_NIVEL_1){
@@ -75,8 +82,9 @@ bool temAumento(int a){
     }
     return false;
 }
+
 /*principal*/
-int match(int n){
+int match(int n, int m){
     int delta;
     bool teveAumento;
 
@@ -85,7 +93,7 @@ int match(int n){
         cout << "MATCH entrou" << endl;
     }
     /***/
-    inicializa(n);
+    inicializa(n, m);
     /***/
     if(TESTE_NIVEL_1){
         cout << "MATCH passou inicializa" << endl;
@@ -107,7 +115,15 @@ int match(int n){
                     cout << "MATCH passou temAumento, i = " << i << endl;
                 }
                 /***/
-                limpaVis(n);
+                /***/
+                if(TESTE_NIVEL_3){
+                    for(int i = 0; i < n; i++){
+                        cout << "MATCH: Ma[" << i << "] = "
+                             << Ma[i] << endl;
+                    }
+                }
+                /***/
+                limpaVis(n, m);
             }
         }
     }
@@ -135,6 +151,20 @@ int main(){
         for(int i = 0; i < m; i++){
             cin >> B[i];
         }
+        /***/
+        if(TESTE_NIVEL_2){
+            cout << "MAIN: A  = (" << n << ") ";
+            for(int i = 0; i < n; i++){
+                cout << A[i] << " ";
+            }
+            cout << endl;
+            cout << "MAIN: B  = (" << m << ") ";
+            for(int i = 0; i < m; i++){
+                cout <<  B[i] << " ";
+            }
+            cout << endl;
+        }
+        /***/
         
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
@@ -158,7 +188,7 @@ int main(){
             }
         }
 
-        cout << "Case " << t + 1 << ": " << match(n) << endl;;
+        cout << "Case " << t + 1 << ": " << match(n, m) << endl;;
         for(int i = 0; i < n; i++){
             adj[i].clear();
         }
